@@ -1,0 +1,460 @@
+# FVN with overlap
+from flwr.client import NumPyClient
+import torch
+import torch.nn as nn
+import torch.optim as optim
+import random
+import numpy as np
+import matplotlib.pyplot as plt
+from torchvision import datasets, transforms
+import torch.nn.functional as F
+from torch.nn.utils import spectral_norm
+from collections import OrderedDict
+import struct
+import json
+import math
+import unittest
+import pandas as pd
+import os
+from torch.utils.data import DataLoader
+# Set the device
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+print(f"Using device: {device}")
+class DefaultBuilder:
+    def __init__(self, args=None):
+        args = args if args is not None else DefaultArgs()
+        self.fc_layer = nn.Linear
+        self.conv_layer = nn.Conv2d
+        self.bn_layer = nn.BatchNorm2d
+        self.embedding_layer = nn.Embedding  # Only if embeddings are needed
+        self.lstm_layer = nn.LSTM  # Only if LSTMs are needed
+
+    def conv(self, in_channels, out_channels, kernel_size, stride=1, padding=0, groups=1, bias=False, seed=None):
+        conv = self.conv_layer(in_channels, out_channels, kernel_size=kernel_size, padding=padding, groups=groups, stride=stride, bias=bias)
+        if seed is not None:
+            torch.manual_seed(seed)
+        torch.nn.init.xavier_normal_(conv.weight)
+        return conv
+
+    def bn(self, num_features, seed=None):
+        bn = self.bn_layer(num_features, track_running_stats=False)
+        if seed is not None:
+            torch.manual_seed(seed)
+        torch.nn.init.ones_(bn.weight)
+        torch.nn.init.zeros_(bn.bias)
+        return bn
+    
+    def linear(self, in_features, out_features, bias=False, seed=None):
+        fc = self.fc_layer(in_features, out_features, bias=bias)
+        if seed is not None:
+            torch.manual_seed(seed)
+        torch.nn.init.xavier_normal_(fc.weight)
+        return fc
+
+class DefaultArgs:
+    in_channels = 3  # Replace with actual in_channels needed
+    num_classes = 10  # Replace with actual number of classes
+
+class SimpleCNN(nn.Module):
+    def __init__(self):
+        super(SimpleCNN, self).__init__()
+
+        self.conv_block1 = nn.Sequential(
+            nn.Conv2d(3, 64, kernel_size=3, padding=1),
+            nn.BatchNorm2d(64),
+            nn.ReLU(inplace=True),
+            nn.Conv2d(64, 64, kernel_size=3, padding=1),
+            nn.BatchNorm2d(64),
+            nn.ReLU(inplace=True),
+            nn.MaxPool2d(2, 2)  # 32x32 -> 16x16
+        )
+
+        self.conv_block2 = nn.Sequential(
+            nn.Conv2d(64, 128, kernel_size=3, padding=1),
+            nn.BatchNorm2d(128),
+            nn.ReLU(inplace=True),
+            nn.Conv2d(128, 128, kernel_size=3, padding=1),
+            nn.BatchNorm2d(128),
+            nn.ReLU(inplace=True),
+            nn.MaxPool2d(2, 2)  # 16x16 -> 8x8
+        )
+
+        self.conv_block3 = nn.Sequential(
+            nn.Conv2d(128, 256, kernel_size=3, padding=1),
+            nn.BatchNorm2d(256),
+            nn.ReLU(inplace=True),
+            nn.Conv2d(256, 256, kernel_size=3, padding=1),
+            nn.BatchNorm2d(256),
+            nn.ReLU(inplace=True),
+            nn.Conv2d(256, 256, kernel_size=3, padding=1),
+            nn.BatchNorm2d(256),
+            nn.ReLU(inplace=True),
+            nn.MaxPool2d(2, 2)  # 8x8 -> 4x4
+        )
+
+        self.global_avg_pool = nn.AdaptiveAvgPool2d(1)  # Output size: (256, 1, 1)
+
+        self.fc_layer = nn.Sequential(
+            nn.Linear(256, 128),
+            nn.ReLU(inplace=True),
+            nn.Dropout(0.3),
+            nn.Linear(128, 10)
+        )
+
+    def forward(self, x):
+        x = self.conv_block1(x)
+        x = self.conv_block2(x)
+        x = self.conv_block3(x)
+        x = self.global_avg_pool(x)  # (batch_size, 256, 1, 1)
+        x = x.view(x.size(0), -1)  # Flatten to (batch_size, 256)
+        x = self.fc_layer(x)
+        return x
+
+# Efficient convolution function
+def efficient_conv(builder, seed, in_channels, out_channels, stride):
+    return nn.Sequential(
+        builder.conv(in_channels, out_channels, kernel_size=3, stride=stride, padding=1, bias=False, seed=seed),
+        builder.bn(out_channels, seed=seed),
+        nn.ReLU(inplace=True)
+    )
+
+
+
+# Load the MNIST dataset
+def load_mnist():
+    transform = transforms.Compose([transforms.ToTensor(), transforms.Normalize((0.4914, 0.4822, 0.4465), (0.2023, 0.1994, 0.2010))])
+    train_dataset = datasets.CIFAR10(root='./data', train=True, transform=transform, download=True)
+    test_dataset = datasets.CIFAR10(root='./data', train=False, transform=transform, download=True)
+    return train_dataset, test_dataset
+
+train_data, test_data = load_mnist()
+print(f"Training dataset size: {len(train_data)}")
+print(f"Test dataset size: {len(test_data)}")
+
+# Split the training data into subsets for different clients with overlap
+def create_clients_with_overlap(train_data, num_clients=10, new_data_size=8000, overlap_size=2000):
+    all_indices = list(range(len(train_data)))
+    random.shuffle(all_indices)
+
+    # Ensure there are enough samples for all clients including overlap
+    assert num_clients * new_data_size + (num_clients * overlap_size) <= len(train_data), "Not enough data for overlap."
+
+    client_data = []
+    overlap_data = []
+
+    # Assign 8,000 unique samples per client
+    for i in range(num_clients):
+        start_idx = i * new_data_size
+        end_idx = start_idx + new_data_size
+        client_indices = all_indices[start_idx:end_idx]
+        client_data.append(client_indices)
+
+    # Assign 2,000 overlapping samples per client
+    for i in range(num_clients):
+        # Overlap between client `i` and client `i+1` (circular overlap)
+        overlap_indices = all_indices[
+            len(client_data) * new_data_size + i * overlap_size : len(client_data) * new_data_size + (i + 1) * overlap_size
+        ]
+        overlap_data.append(overlap_indices)
+
+    # Merge unique and overlapping data for each client
+    final_client_data = []
+    for i in range(num_clients):
+        current_client_data = client_data[i] + overlap_data[i % num_clients]
+        final_client_data.append(torch.utils.data.Subset(train_data, current_client_data))
+
+    return final_client_data
+
+# Local training function for each client
+def train_client(model, train_loader, epochs=5, lr=0.01):
+    model.train()
+    optimizer = optim.SGD(model.parameters(), lr=lr)
+    criterion = nn.CrossEntropyLoss()
+    for _ in range(epochs):
+        for data, labels in train_loader:
+            data, labels = data.to(device), labels.to(device)
+            optimizer.zero_grad()
+            output = model(data)
+            loss = criterion(output, labels)
+            loss.backward()
+            optimizer.step()
+    return model.state_dict()
+
+# Aggregate weights function (FedAvg)
+def aggregate_weights(global_model, client_models):
+    global_state_dict = global_model.state_dict()
+    
+    for key in global_state_dict.keys():
+        # Convert model parameters to float if they are in Long (integer) type
+        param_tensors = [client_models[i][key].float() if client_models[i][key].dtype == torch.long else client_models[i][key] 
+                         for i in range(len(client_models))]
+        
+        # Compute the average of the parameters across all clients
+        global_state_dict[key] = torch.stack(param_tensors, dim=0).mean(dim=0)
+    
+    global_model.load_state_dict(global_state_dict)
+    return global_model
+
+
+# Test function to evaluate model accuracy
+def test_model(model, test_loader):
+    model.eval()
+    correct = 0
+    total = 0
+    with torch.no_grad():
+        for data, labels in test_loader:
+            data, labels = data.to(device), labels.to(device)
+            outputs = model(data)
+            _, predicted = torch.max(outputs.data, 1)
+            total += labels.size(0)
+            correct += (predicted == labels).sum().item()
+    return 100 * correct / total
+
+# Define the Grid class
+class Grid:
+    def __init__(self, rows, cols):
+        self.rows = rows
+        self.cols = cols
+        self.grid = [[None for _ in range(cols)] for _ in range(rows)]
+        self.empty_spaces = set((i, j) for i in range(rows) for j in range(cols))
+        self.cars = []
+
+    def add_car(self, car, position):
+        if (position[0] < 0 or position[0] >= self.rows or position[1] < 0 or position[1] >= self.cols):
+            raise IndexError("Position out of bounds")
+        if position in self.empty_spaces:
+            self.grid[position[0]][position[1]] = car
+            self.empty_spaces.remove(position)
+            self.cars.append((car, position))
+            car.position = position
+        else:
+            print("Position already occupied or out of bounds")
+
+    def move_car(self, car, new_position):
+        if (new_position[0] < 0 or new_position[0] >= self.rows or new_position[1] < 0 or new_position[1] >= self.cols):
+            raise IndexError("New position out of bounds")
+        if new_position in self.empty_spaces:
+            old_position = car.position
+            self.grid[old_position[0]][old_position[1]] = None
+            self.grid[new_position[0]][new_position[1]] = car
+            self.empty_spaces.add(old_position)
+            self.empty_spaces.remove(new_position)
+            car.position = new_position
+        else:
+            print("New position already occupied or out of bounds")
+
+    def remove_car(self, car):
+        if car in [car for car, _ in self.cars]:
+            position = car.position
+            self.grid[position[0]][position[1]] = None
+            self.empty_spaces.add(position)
+            self.cars.remove((car, position))
+        else:
+            raise ValueError("Car not found in the grid")
+
+    def add_random_cars(self, num_cars):
+        for _ in range(num_cars):
+            car_id = len(self.cars)
+            car = Car(car_id)
+            position = random.choice(list(self.empty_spaces))
+            self.add_car(car, position)
+
+# Define the Antenna class
+class Antenna:
+    DIRECTIONS = ['N', 'NE', 'E', 'SE', 'S', 'SW', 'W', 'NW']
+
+    def __init__(self):
+        self.direction_index = 2  # Default to 'E'
+
+    def rotate_clockwise(self):
+        self.direction_index = (self.direction_index + 1) % 8
+
+    def rotate_counter_clockwise(self):
+        self.direction_index = (self.direction_index - 1) % 8
+
+    def get_direction(self):
+        return Antenna.DIRECTIONS[self.direction_index]  
+
+# Define the Car class
+class Car(NumPyClient):
+    def __init__(self, id, data, targets, antenna_range=3):
+        self.id = id
+        self.antenna = Antenna()
+        self.position = None
+        self.data_history = []
+        self.antenna_range = antenna_range
+        self.model = SimpleCNN()  # Each car has its own model
+        #self.data = train_images_tensor  # Using MNIST train images
+        #self.targets = train_labels_tensor  # Using MNIST train labels
+        self.data = data  # Assign distinct data to each car
+        # self.targets = targets  # Assign distinct labels to each car
+
+    def receive_data(self, data):
+        self.data_history.append(data)
+
+    def __repr__(self):
+        return f"Car(id={self.id}, range={self.antenna_range})"
+
+# Define the Simulation class
+class Simulation:
+    def __init__(self, grid, path_loss_probability=0.2):
+        self.grid = grid
+        self.base_path_loss_probability = path_loss_probability
+        self.active_cars = set()
+        self.inactive_cars = set()
+        self.global_model = SimpleCNN()
+        self.server_car = None
+
+    def set_server_car(self, car):
+        self.server_car = car
+
+    def move_car_randomly(self):
+        car, old_position = random.choice(self.grid.cars)
+        new_position = random.choice(list(self.grid.empty_spaces))
+        self.grid.move_car(car, new_position)
+
+    def send_data(self, sender, payload, path_loss_probability=None):
+        if path_loss_probability is None:
+            path_loss_probability = self.base_path_loss_probability
+        direction = sender.antenna.get_direction()
+        receivers = self.get_receivers(sender, direction)
+        receiving_cars = []
+        for receiver in receivers:
+            distance = self.calculate_distance(sender.position, receiver.position)
+            effective_path_loss_probability = self.adjust_path_loss_probability(distance, path_loss_probability)
+            if random.random() > effective_path_loss_probability:
+                receiver.receive_data(payload)
+                receiving_cars.append(receiver)
+                print(f"Data sent from Car {sender.id} to Car {receiver.id}")
+            else:
+                print(f"Data loss from Car {sender.id} to Car {receiver.id}")
+        return receiving_cars
+
+    def train_step(self, client_loaders, lr=0.01):
+        if not self.server_car:
+            raise ValueError("Server car not set")
+        client_models = []
+        for client_id, client_loader in enumerate(client_loaders):
+            # Initialize a model for each client and load the global model state
+            local_model = SimpleCNN().to(device)
+            local_model.load_state_dict(self.global_model.state_dict())
+            # Train the local model and collect the updated state_dict
+            client_model_state = train_client(local_model, client_loader, epochs=epochs_per_client, lr=lr)
+            client_models.append(client_model_state)
+        # Aggregate client models using FedAvg
+        self.global_model = aggregate_weights(self.global_model, client_models)
+        #for car, _ in self.grid.cars:
+            #car.model.load_state_dict(self.global_model.state_dict())
+
+    def get_receivers(self, sender, direction):
+        receivers = []
+        row, col = sender.position
+        max_range = sender.antenna_range
+        if direction == 'N':
+            for i in range(1, max_range + 1):
+                if row - i >= 0 and self.grid.grid[row - i][col]:
+                    receivers.append(self.grid.grid[row - i][col])
+        elif direction == 'NE':
+            for i in range(1, max_range + 1):
+                if row - i >= 0 and col + i < self.grid.cols and self.grid.grid[row - i][col + i]:
+                    receivers.append(self.grid.grid[row - i][col + i])
+        elif direction == 'E':
+            for j in range(1, max_range + 1):
+                if col + j < self.grid.cols and self.grid.grid[row][col + j]:
+                    receivers.append(self.grid.grid[row][col + j])
+        elif direction == 'SE':
+            for i in range(1, max_range + 1):
+                if row + i < self.grid.rows and col + i < self.grid.cols and self.grid.grid[row + i][col + i]:
+                    receivers.append(self.grid.grid[row + i][col + i])
+        elif direction == 'S':
+            for i in range(1, max_range + 1):
+                if row + i < self.grid.rows and self.grid.grid[row + i][col]:
+                    receivers.append(self.grid.grid[row + i][col])
+        elif direction == 'SW':
+            for i in range(1, max_range + 1):
+                if row + i < self.grid.rows and col - i >= 0 and self.grid.grid[row + i][col - i]:
+                    receivers.append(self.grid.grid[row + i][col - i])
+        elif direction == 'W':
+            for j in range(1, max_range + 1):
+                if col - j >= 0 and self.grid.grid[row][col - j]:
+                    receivers.append(self.grid.grid[row][col - j])
+        elif direction == 'NW':
+            for i in range(1, max_range + 1):
+                if row - i >= 0 and col - i >= 0 and self.grid.grid[row - i][col - i]:
+                    receivers.append(self.grid.grid[row - i][col - i])
+        print(f"Receivers for direction {direction} from position ({row}, {col}): {[car.id for car in receivers]}")
+        return receivers
+
+    def calculate_distance(self, pos1, pos2):
+        return math.sqrt((pos1[0] - pos2[0]) ** 2 + (pos1[1] - pos2[1]) ** 2)
+
+    def adjust_path_loss_probability(self, distance, base_path_loss_probability):
+        return base_path_loss_probability * (1 + 0.1 * distance)
+
+    def run_step(self, num_transmitters=1):
+        self.move_car_randomly()
+        self.active_cars.clear()
+        self.inactive_cars.clear()
+
+        # Select num_transmitters cars to transmit
+        transmitting_cars = random.sample([car for car, _ in self.grid.cars], min(num_transmitters, len(self.grid.cars)))
+
+        for car, _ in self.grid.cars:
+            if car in transmitting_cars:
+                car.antenna.rotate_clockwise()
+                receiving_cars = self.send_data(car, {"payload": "data"})
+                self.active_cars.add(car)
+                print(f"Active Car: {car.id}, Receiving Cars: {[c.id for c in receiving_cars]}")
+            else:
+                self.inactive_cars.add(car)
+
+    def save_configuration(self, filename):
+        config = {
+            "cars": [{"id": car.id, "position": car.position, "data_history": car.data_history, "antenna_range": car.antenna_range} for car, _ in self.grid.cars],
+            "empty_spaces": list(self.grid.empty_spaces)
+        }
+        with open(filename, 'w') as f:
+            json.dump(config, f)
+
+    def load_configuration(self, filename):
+        with open(filename, 'r') as f:
+            config = json.load(f)
+        self.grid.grid = [[None for _ in range(self.grid.cols)] for _ in range(self.grid.rows)]
+        self.grid.empty_spaces = set((i, j) for i in range(self.grid.rows) for j in range(self.grid.cols))
+        self.grid.cars = []
+        for car_data in config['cars']:
+            car = Car(car_data['id'], car_data['antenna_range'])
+            car.position = tuple(car_data['position'])
+            car.data_history = car_data['data_history']
+            self.grid.grid[car.position[0]][car.position[1]] = car
+            self.grid.empty_spaces.remove(car.position)
+            self.grid.cars.append((car, car.position))
+
+num_clients=5
+epochs_per_client=5
+lr=0.01
+new_data_size = 7000
+overlap_size = 3000
+# Load the dataset
+train_data, test_data = load_mnist()
+# Create client datasets
+client_data_with_overlap = create_clients_with_overlap(
+    train_data, num_clients=num_clients, new_data_size=new_data_size, overlap_size=overlap_size
+)
+# Create data loaders for each client
+client_loaders_with_overlap = [
+    torch.utils.data.DataLoader(client_data_with_overlap[i], batch_size=64, shuffle=True) for i in range(num_clients)
+]
+test_loader = torch.utils.data.DataLoader(test_data, batch_size=64, shuffle=False)
+# Run simulation with MNIST data
+import csv
+# Initialize the grid and simulation, and add cars with unique datasets
+grid = Grid(5, 5)
+simulation = Simulation(grid)
+accuracies = []
+# Add 10 cars to the grid, each with a unique subset of data
+for i in range(num_clients):
+    car = Car(i, client_data_with_overlap[i], client_loaders_with_overlap[i])
+    position = random.choice(list(grid.empty_spaces))
+    grid.add_car(car, position)
+simulation.set_server_car(simulation.grid.cars[0][0])  # Set the first car as the server
