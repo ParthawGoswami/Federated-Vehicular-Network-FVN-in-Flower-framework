@@ -39,3 +39,12 @@ class CarClient(NumPyClient):
         self.set_parameters(parameters)
         accuracy = test_model(self.model, self.dataloader)
         return float(accuracy), len(self.dataloader), {"accuracy": accuracy}
+
+
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+from flwr.common import Context
+def client_fn(context):
+    partition_id = int(context.node_config["partition-id"])
+    car = grid.cars[partition_id][0]  # Access the car by its ID
+    dataloader = client_loaders_with_overlap[partition_id]
+    return CarClient(car, dataloader)
