@@ -4,8 +4,9 @@
 1. Install the dependencies if you are training on Jupyter notebook. Otherwise all dependencies come preinstalled on the Colab, Kaggle and CloudLab. Choose any of them.
 
 2. Let's first, install Flower. You can install flower very conveniently from pip:
+```
 !pip install -q "flwr[simulation]" flwr-datasets
-
+```
 3. Import NumPyClient from flower client and run FVN_setup.
 
 4. A Car Client is a simple Python class with four distinct methods:
