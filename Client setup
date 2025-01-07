@@ -25,7 +25,7 @@ class CarClient(NumPyClient):
     def fit(self, parameters, config):
         """Train the model using the car's local data."""
         self.set_parameters(parameters)
-        # Training loop (using JAX for loss and gradients)
+
         def loss_fn(params):
             logits = self.model.forward(self.data["inputs"], params)
             return cross_entropy_loss(logits, self.data["labels"])
