@@ -16,6 +16,8 @@ import math
 import unittest
 import pandas as pd
 import os
+import jax
+from jax import grad
 from torch.utils.data import DataLoader
 # Set the device
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -165,6 +167,13 @@ def create_clients_with_overlap(train_data, num_clients=10, new_data_size=8000, 
 
     return final_client_data
 
+def loss_fn(params, model, data, labels):
+    """Compute the loss given model parameters, input data, and labels."""
+    model.load_state_dict(params, strict=False)  # Assuming params is compatible with state_dict
+    output = model(data)
+    criterion = torch.nn.CrossEntropyLoss()  # Example loss function
+    return criterion(output, labels)
+
 # Local training function for each client
 def train_client(model, train_loader, epochs=5, lr=0.01):
     model.train()
@@ -173,11 +182,12 @@ def train_client(model, train_loader, epochs=5, lr=0.01):
     for _ in range(epochs):
         for data, labels in train_loader:
             data, labels = data.to(device), labels.to(device)
-            optimizer.zero_grad()
-            output = model(data)
-            loss = criterion(output, labels)
-            loss.backward()
+            params = model.state_dict()
+            # Compute gradient of the loss function
+            grad_fn = grad(lambda p: loss_fn(p, model, data, labels))  # Correctly uses JAX grad
+            gradients = grad_fn(params)
             optimizer.step()
+            optimizer.zero_grad()
     return model.state_dict()
 
 # Aggregate weights function (FedAvg)
