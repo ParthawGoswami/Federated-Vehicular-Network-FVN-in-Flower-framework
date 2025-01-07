@@ -1,5 +1,6 @@
 !pip install flwr
-
+import multiprocessing as mp
+mp.set_start_method("spawn", force=True)
 import jax
 from jax import grad
 
