@@ -1,8 +1,6 @@
 !pip install flwr
 import multiprocessing as mp
 mp.set_start_method("spawn", force=True)
-import jax
-from jax import grad
 
 from flwr.client import NumPyClient
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -25,13 +23,6 @@ class CarClient(NumPyClient):
     def fit(self, parameters, config):
         """Train the model using the car's local data."""
         self.set_parameters(parameters)
-
-        def loss_fn(params):
-            logits = self.model.forward(self.data["inputs"], params)
-            return cross_entropy_loss(logits, self.data["labels"])
-
-        grad_fn = grad(loss_fn)
-        grads = grad_fn(self.model.get_parameters())
         train_client(self.model, self.dataloader, epochs=5, lr=0.01)
         return self.get_parameters(), len(self.dataloader), {}
 
