@@ -17,9 +17,7 @@ evaluate(): With this method, the server can evaluate the performance of the glo
 
 Run Client setup and client_fn will return a CarClient that uses a specific data partition (partition-id). The index of the partition is set internally during the simulation.
 
-5. FedAvg derives a new version of the global model by taking the average of all the models sent by clients participating in the round.  
-
-start the simulation and check how the distributed accuracy goes up as training progresses while the loss goes down.
+5. FedAvg derives a new version of the global model by taking the average of all the models sent by clients participating in the round. Start the simulation and check how the distributed accuracy goes up as training progresses while the loss goes down.
 
 6. Plotting the results:
 ```
