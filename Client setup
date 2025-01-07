@@ -42,7 +42,7 @@ class CarClient(NumPyClient):
         return float(accuracy), len(self.dataloader), {"accuracy": accuracy}
 
 
-device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+
 from flwr.common import Context
 def client_fn(context):
     partition_id = int(context.node_config["partition-id"])
