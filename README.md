@@ -1,6 +1,6 @@
 # Federated-Vehicular-Network-FVN-in-Flower-framework
 
-# Usage
+## Usage
 1. Install the dependencies if you are training on Jupyter notebook. Otherwise all dependencies come preinstalled on the Colab, Kaggle and CloudLab. Choose any of them.
 
 2. Let's first, install Flower. You can install flower very conveniently from pip:
@@ -21,7 +21,7 @@ Run Client setup and client_fn will return a CarClient that uses a specific data
 start the simulation and check how the distributed accuracy goes up as training progresses while the loss goes down.
 
 6. Plotting the results: 
-
+---python
 import matplotlib.pyplot as plt
 plt.figure(figsize=(10, 6))
 plt.plot(range(1, len(accuracy_per_round) + 1), accuracy_per_round, marker="o", label="Accuracy")
@@ -32,3 +32,4 @@ plt.xticks(range(1, len(accuracy_per_round) + 1))
 plt.grid(True)
 plt.legend()
 plt.show()
+---
