@@ -11,9 +11,9 @@
 
 4. A Car Client is a simple Python class with four distinct methods:
 
-fit(): With this method, the client does on-device training for a number of epochs using its own data. 
+* fit(): With this method, the client does on-device training for a number of epochs using its own data. 
 
-evaluate(): With this method, the server can evaluate the performance of the global model on the local validation set of a client. This can be used for instance when there is no centralised dataset on the server for test. 
+* evaluate(): With this method, the server can evaluate the performance of the global model on the local validation set of a client. This can be used for instance when there is no centralised dataset on the server for test. 
 
 Run Client setup and client_fn will return a CarClient that uses a specific data partition (partition-id). The index of the partition is set internally during the simulation.
 
