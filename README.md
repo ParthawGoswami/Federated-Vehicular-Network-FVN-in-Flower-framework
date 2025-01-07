@@ -20,8 +20,8 @@ Run Client setup and client_fn will return a CarClient that uses a specific data
 
 start the simulation and check how the distributed accuracy goes up as training progresses while the loss goes down.
 
-6. Plotting the results: 
-'''
+6. Plotting the results:
+```
 import matplotlib.pyplot as plt
 plt.figure(figsize=(10, 6))
 plt.plot(range(1, len(accuracy_per_round) + 1), accuracy_per_round, marker="o", label="Accuracy")
@@ -32,4 +32,4 @@ plt.xticks(range(1, len(accuracy_per_round) + 1))
 plt.grid(True)
 plt.legend()
 plt.show()
-'''
+```
