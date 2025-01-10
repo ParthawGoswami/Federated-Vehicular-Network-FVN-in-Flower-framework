@@ -1,0 +1,15 @@
+Round1, Accuracy: 54.35%
+Round 2, Accuracy: 71.55%
+Round 3, Accuracy: 77.8%
+Round 4, Accuracy: 77%
+Round 5, Accuracy: 82.35%
+Round 6, Accuracy: 84.15%
+Round 7, Accuracy: 82.9%
+Round 8, Accuracy: 83.4%
+Round 9, Accuracy: 85.8%
+Round 10, Accuracy: 83.7%
+Round 11, Accuracy: 84.2%
+Round 12, Accuracy: 86.45%
+Round 13, Accuracy: 84.6%
+Round 14, Accuracy: 87%
+Round 15, Accuracy: 85.55%
