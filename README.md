@@ -5,7 +5,9 @@
 * Python 3.10: Install with
   ```bash
   sudo apt install python3.10
-* Pandas 2.1.0: Install with pip install pandas==2.1.0
+* Pandas 2.1.0: Install with
+  ```bash
+  pip install pandas==2.1.0
 * Matplotlib 3.8.0: Install with pip install matplotlib==3.8.0
 * PyTorch 2.0.1+cpu: Install with pip install torch==2.0.1+cpu
 * TorchVision 0.15.2+cpu: Install with pip install torchvision==0.15.2+cpu
