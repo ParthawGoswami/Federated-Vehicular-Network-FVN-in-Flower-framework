@@ -1,3 +1,4 @@
+# Less fluctuation can be seen after reduced batch size
 Round 1, Accuracy: 58.5%
 Round 2, Accuracy: 74.75%
 Round 3, Accuracy: 76.6%
