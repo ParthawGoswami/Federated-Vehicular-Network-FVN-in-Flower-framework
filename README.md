@@ -8,14 +8,30 @@
 * Pandas 2.1.0: Install with
   ```bash
   pip install pandas==2.1.0
-* Matplotlib 3.8.0: Install with pip install matplotlib==3.8.0
-* PyTorch 2.0.1+cpu: Install with pip install torch==2.0.1+cpu
-* TorchVision 0.15.2+cpu: Install with pip install torchvision==0.15.2+cpu
-* NumPy 1.24.4: Install with pip install numpy==1.24.4
-* Flower Simulation 1.5.0: Install with pip install "flwr[simulation]==1.5.0"
-* Flower Datasets 1.0.0: Install with pip install flwr-datasets==1.0.0
-* JAX 0.4.14: Install with pip install jax==0.4.14
-* JAXlib 0.4.14+cpu: Install with pip install jaxlib==0.4.14+cpu
+* Matplotlib 3.8.0: Install with
+  ```bash
+  pip install matplotlib==3.8.0
+* PyTorch 2.0.1+cpu: Install with
+  ```bash
+  pip install torch==2.0.1+cpu
+* TorchVision 0.15.2+cpu: Install with
+  ```bash
+  pip install torchvision==0.15.2+cpu
+* NumPy 1.24.4: Install with
+  ```bash
+  pip install numpy==1.24.4
+* Flower Simulation 1.5.0: Install with
+  ```bash
+  pip install "flwr[simulation]==1.5.0"
+* Flower Datasets 1.0.0: Install with
+  ```bash
+  pip install flwr-datasets==1.0.0
+* JAX 0.4.14: Install with
+  ```bash
+  pip install jax==0.4.14
+* JAXlib 0.4.14+cpu: Install with
+  ```bash
+  pip install jaxlib==0.4.14+cpu
 
 ## Usage
 1. Install the dependencies if you are training on Jupyter notebook. Otherwise all dependencies come preinstalled on the Colab, Kaggle and CloudLab. Choose any of them.
