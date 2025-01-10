@@ -2,7 +2,8 @@
 
 ## List of Dependencies
 
-* Python 3.10: Install with ```bash
+* Python 3.10: Install with
+  ```bash
   sudo apt install python3.10
 * Pandas 2.1.0: Install with pip install pandas==2.1.0
 * Matplotlib 3.8.0: Install with pip install matplotlib==3.8.0
