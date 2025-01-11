@@ -7,7 +7,6 @@
 * Use SSH command of the corresponding node as the Host Name in putty (e.g., @ms0644.utah.cloudlab.us)
  ```bash
  ssh Parthaw@ms0644.utah.cloudlab.us
-
 * Now in the shell, update the environment (sudo apt update) and install pip (sudo apt install python3-pip)
 
 Step 5: Now you can install other dependencies (e.g., numpy, torch, matplotlib etc) or these can be installed later on jupyter notebook.
