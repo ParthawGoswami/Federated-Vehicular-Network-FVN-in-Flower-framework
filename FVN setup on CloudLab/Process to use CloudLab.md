@@ -20,9 +20,11 @@
   pip install notebook
   ssh -L 8888:localhost:8888 Parthaw@ms0644.utah.cloudlab.us  
 
-Step 7: Permission can be denied due to not having public key. Debug for getting more information. (ssh -v -L 8888:localhost:8888 Parthaw@ms0644.utah.cloudlab.us)
+* Permission can be denied due to not having public key. Debug for getting more information.
+  ```bash
+  ssh -v -L 8888:localhost:8888 Parthaw@ms0644.utah.cloudlab.us
 
-Step 8: On your local machine, display the content of your public key (e.g., cat ~/.ssh/id_ed25519.pub). If no file or directory found, gennerate one public key (ssh-keygen -t ed25519 -C "parthawgoswami555@gmail.com") 
+* On your local machine, display the content of your public key (e.g., cat ~/.ssh/id_ed25519.pub). If no file or directory found, gennerate one public key (ssh-keygen -t ed25519 -C "parthawgoswami555@gmail.com") 
 
 Step 9: Show the public key and add in the "Manage SSH Keys" page of CloudLab. (cat ~/.ssh/id_ed25519.pub)
 
