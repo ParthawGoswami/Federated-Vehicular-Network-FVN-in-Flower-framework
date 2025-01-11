@@ -1,4 +1,4 @@
-# How you use CloudLab for FVN setup or FVN with flower framework.
+## How you use CloudLab for FVN setup or FVN with flower framework.
 
 * Atfirst choose a CloudLab profile based on your hardware requirement. Hardware specification you can find from this link(https://docs.cloudlab.us/hardware.html). I have chosen m400 node from CloudLab Utah cluster for my experiment. You can change node based on node availability and RAM, CPU core, CPU speed etc. 
 
@@ -13,9 +13,12 @@
   sudo apt update  
   sudo apt install python3-pip
   
-Step 5: Now you can install other dependencies (e.g., numpy, torch, matplotlib etc) or these can be installed later on jupyter notebook.
-
-Step 6: Install the notebook (pip install notebook) and test the SSH connection (ssh -L 8888:localhost:8888 Parthaw@ms0644.utah.cloudlab.us).
+* Now you can install other dependencies (e.g., numpy, torch, matplotlib etc) or these can be installed later on jupyter notebook.
+    
+* Install the notebook and test the SSH connection.
+  ```bash
+  pip install notebook
+  ssh -L 8888:localhost:8888 Parthaw@ms0644.utah.cloudlab.us  
 
 Step 7: Permission can be denied due to not having public key. Debug for getting more information. (ssh -v -L 8888:localhost:8888 Parthaw@ms0644.utah.cloudlab.us)
 
