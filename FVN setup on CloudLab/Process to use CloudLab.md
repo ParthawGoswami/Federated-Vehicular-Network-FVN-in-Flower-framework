@@ -8,8 +8,11 @@
   ```bash
   ssh Parthaw@ms0644.utah.cloudlab.us
 
-* Now in the shell, update the environment (sudo apt update) and install pip (sudo apt install python3-pip)
-
+* Now in the shell, update the environment and install pip 
+  ```bash
+  sudo apt update  
+  sudo apt install python3-pip
+  
 Step 5: Now you can install other dependencies (e.g., numpy, torch, matplotlib etc) or these can be installed later on jupyter notebook.
 
 Step 6: Install the notebook (pip install notebook) and test the SSH connection (ssh -L 8888:localhost:8888 Parthaw@ms0644.utah.cloudlab.us).
