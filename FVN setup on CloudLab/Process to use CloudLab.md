@@ -5,8 +5,9 @@
 * Install putty and puttygen in your local device. Using puttygen generate public and private keys. Add the public key in "Manage SSH Keys" page of CloudLab. Add the private key in putty for authentication.
 
 * Use SSH command of the corresponding node as the Host Name in putty (e.g., @ms0644.utah.cloudlab.us)
- ```bash
- ssh Parthaw@ms0644.utah.cloudlab.us
+  ```bash
+  ssh Parthaw@ms0644.utah.cloudlab.us
+
 * Now in the shell, update the environment (sudo apt update) and install pip (sudo apt install python3-pip)
 
 Step 5: Now you can install other dependencies (e.g., numpy, torch, matplotlib etc) or these can be installed later on jupyter notebook.
