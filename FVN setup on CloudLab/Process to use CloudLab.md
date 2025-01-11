@@ -24,18 +24,25 @@
   ```bash
   ssh -v -L 8888:localhost:8888 Parthaw@ms0644.utah.cloudlab.us
 
-* On your local machine, display the content of your public key (e.g., cat ~/.ssh/id_ed25519.pub). If no file or directory found, gennerate one public key (ssh-keygen -t ed25519 -C "parthawgoswami555@gmail.com") 
+* On your local machine, display the content of your public key. If no file or directory found, gennerate one public key.
+  ```bash
+  cat ~/.ssh/id_ed25519.pub
+  ssh-keygen -t ed25519 -C "parthawgoswami555@gmail.com"
 
-Step 9: Show the public key and add in the "Manage SSH Keys" page of CloudLab. (cat ~/.ssh/id_ed25519.pub)
+* Show the public key and add in the "Manage SSH Keys" page of CloudLab. cat ~/.ssh/id_ed25519.pub
+  ```bash
+  cat ~/.ssh/id_ed25519.pub
 
-Step 10: Now, test the SSH connection again (ssh -L 8888:localhost:8888 Parthaw@ms0644.utah.cloudlab.us).
+* Now, test the SSH connection again.
+  ```bash
+  ssh -L 8888:localhost:8888 Parthaw@ms0644.utah.cloudlab.us
 
-Step 11:  run Jupyter (jupyter notebook --no-browser --ip=0.0.0.0 --port=8888) and 
-collect the URL (e.g., http://127.0.0.1:8889/tree?token=6e226c54143026e4279041e299b7d566d0c997b2e13c37d9)
+* Run Jupyter and collect the URL (e.g., http://127.0.0.1:8889/tree?token=6e226c54143026e4279041e299b7d566d0c997b2e13c37d9).
+  ```bash
+  jupyter notebook --no-browser --ip=0.0.0.0 --port=8888
 
-Step 11: Replace 127.0.0.1 with the remote IP of the node (e.g., http://128.110.216.235:8889/tree?token=6e226c54143026e4279041e299b7d566d0c997b2e13c37d9
-128.110.216.235) and paste it to the browser.
+* Replace 127.0.0.1 with the remote IP of the node (e.g., http://128.110.216.235:8889/tree?token=6e226c54143026e4279041e299b7d566d0c997b2e13c37d9) and paste it to the browser.
 
-Step 12: Now in the Jupyter notebook you can run your experiment. How to check if jupyter notebook is using remote node for experiment? Run the following command to check which IP addresses Jupyter is bound to:
-
-sudo netstat -tuln | grep 8888
+* Now in the Jupyter notebook you can run your experiment. How to check if jupyter notebook is using remote node for experiment? Run the following command to check which IP addresses Jupyter is bound to:
+  ```bash
+  sudo netstat -tuln | grep 8888
