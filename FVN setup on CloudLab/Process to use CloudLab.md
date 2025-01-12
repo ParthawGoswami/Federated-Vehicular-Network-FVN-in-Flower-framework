@@ -1,4 +1,4 @@
-## How you use CloudLab for FVN setup or FVN with flower framework.
+## How we can use CloudLab for FVN setup or FVN with flower framework.
 
 * Atfirst choose a CloudLab profile based on your hardware requirement. Hardware specification you can find from this link(https://docs.cloudlab.us/hardware.html). I have chosen m400 node from CloudLab Utah cluster for my experiment. You can change node based on node availability and RAM, CPU core, CPU speed etc. 
 
