@@ -1,3 +1,5 @@
+Setup details: Rounds= 20, num_clients=5, epochs_per_client=1, lr=0.001, distinct data size per client=4000, Overlap data= 6000, batch size=64;
+
 Round 1, Accuracy: 35.79%
 Round 2, Accuracy: 51.13%
 Round 3, Accuracy: 59.89%
