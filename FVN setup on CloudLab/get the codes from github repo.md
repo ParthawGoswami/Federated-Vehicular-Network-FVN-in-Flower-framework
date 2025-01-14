@@ -1,4 +1,4 @@
-## How to get the codes on your repo to Cloudlab machines
+## How to get the codes from the repo to Cloudlab machines
 
 * Use the SSH command provided by CloudLab to log in to your control machine:
   ```bash
