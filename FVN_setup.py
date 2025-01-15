@@ -1,3 +1,5 @@
+# FVN setup on Cifar-10 dataset
+
 from flwr.client import NumPyClient
 import torch
 import torch.nn as nn
@@ -21,6 +23,26 @@ from torch.utils.data import DataLoader
 # Set the device
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 print(f"Using device: {device}")
+# Load the CIFAR-10 dataset
+# Load CIFAR-10 dataset
+transform = transforms.Compose([
+    transforms.ToTensor(),
+    transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))  # Normalize to [-1, 1]
+])
+
+train_dataset = CIFAR10(root='./data', train=True, download=True, transform=transform)
+test_dataset = CIFAR10(root='./data', train=False, download=True, transform=transform)
+
+train_loader = DataLoader(train_dataset, batch_size=64, shuffle=True)
+test_loader = DataLoader(test_dataset, batch_size=1000, shuffle=False)
+#train_loader = torch.utils.data.DataLoader(train_dataset, batch_size=64, shuffle=True, num_workers=2)
+#test_loader = torch.utils.data.DataLoader(test_dataset, batch_size=64, shuffle=False, num_workers=2)
+
+# Convert datasets to tensors
+train_images_tensor = torch.stack([data[0].view(-1) for data in train_dataset])
+train_labels_tensor = torch.tensor([data[1] for data in train_dataset])
+test_images_tensor = torch.stack([data[0].view(-1) for data in test_dataset])
+test_labels_tensor = torch.tensor([data[1] for data in test_dataset])
 
 # Define the SimpleNet model
 class SimpleCNN(nn.Module):
