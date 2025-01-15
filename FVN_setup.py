@@ -1,4 +1,3 @@
-# FVN with overlap
 from flwr.client import NumPyClient
 import torch
 import torch.nn as nn
@@ -22,202 +21,46 @@ from torch.utils.data import DataLoader
 # Set the device
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 print(f"Using device: {device}")
-class DefaultBuilder:
-    def __init__(self, args=None):
-        args = args if args is not None else DefaultArgs()
-        self.fc_layer = nn.Linear
-        self.conv_layer = nn.Conv2d
-        self.bn_layer = nn.BatchNorm2d
-        self.embedding_layer = nn.Embedding  # Only if embeddings are needed
-        self.lstm_layer = nn.LSTM  # Only if LSTMs are needed
 
-    def conv(self, in_channels, out_channels, kernel_size, stride=1, padding=0, groups=1, bias=False, seed=None):
-        conv = self.conv_layer(in_channels, out_channels, kernel_size=kernel_size, padding=padding, groups=groups, stride=stride, bias=bias)
-        if seed is not None:
-            torch.manual_seed(seed)
-        torch.nn.init.xavier_normal_(conv.weight)
-        return conv
-
-    def bn(self, num_features, seed=None):
-        bn = self.bn_layer(num_features, track_running_stats=False)
-        if seed is not None:
-            torch.manual_seed(seed)
-        torch.nn.init.ones_(bn.weight)
-        torch.nn.init.zeros_(bn.bias)
-        return bn
-    
-    def linear(self, in_features, out_features, bias=False, seed=None):
-        fc = self.fc_layer(in_features, out_features, bias=bias)
-        if seed is not None:
-            torch.manual_seed(seed)
-        torch.nn.init.xavier_normal_(fc.weight)
-        return fc
-
-class DefaultArgs:
-    in_channels = 3  # Replace with actual in_channels needed
-    num_classes = 10  # Replace with actual number of classes
-
+# Define the SimpleNet model
 class SimpleCNN(nn.Module):
     def __init__(self):
         super(SimpleCNN, self).__init__()
-
-        self.conv_block1 = nn.Sequential(
-            nn.Conv2d(3, 64, kernel_size=3, padding=1),
-            nn.BatchNorm2d(64),
-            nn.ReLU(inplace=True),
-            nn.Conv2d(64, 64, kernel_size=3, padding=1),
-            nn.BatchNorm2d(64),
-            nn.ReLU(inplace=True),
-            nn.MaxPool2d(2, 2)  # 32x32 -> 16x16
-        )
-
-        self.conv_block2 = nn.Sequential(
-            nn.Conv2d(64, 128, kernel_size=3, padding=1),
-            nn.BatchNorm2d(128),
-            nn.ReLU(inplace=True),
-            nn.Conv2d(128, 128, kernel_size=3, padding=1),
-            nn.BatchNorm2d(128),
-            nn.ReLU(inplace=True),
-            nn.MaxPool2d(2, 2)  # 16x16 -> 8x8
-        )
-
-        self.conv_block3 = nn.Sequential(
-            nn.Conv2d(128, 256, kernel_size=3, padding=1),
-            nn.BatchNorm2d(256),
-            nn.ReLU(inplace=True),
-            nn.Conv2d(256, 256, kernel_size=3, padding=1),
-            nn.BatchNorm2d(256),
-            nn.ReLU(inplace=True),
-            nn.Conv2d(256, 256, kernel_size=3, padding=1),
-            nn.BatchNorm2d(256),
-            nn.ReLU(inplace=True),
-            nn.MaxPool2d(2, 2)  # 8x8 -> 4x4
-        )
-
-        self.global_avg_pool = nn.AdaptiveAvgPool2d(1)  # Output size: (256, 1, 1)
-
-        self.fc_layer = nn.Sequential(
-            nn.Linear(256, 128),
-            nn.ReLU(inplace=True),
-            nn.Dropout(0.3),
-            nn.Linear(128, 10)
-        )
+        self.fc1 = nn.Linear(32 * 32 * 3, 128)
+        self.fc2 = nn.Linear(128, 10)
 
     def forward(self, x):
-        x = self.conv_block1(x)
-        x = self.conv_block2(x)
-        x = self.conv_block3(x)
-        x = self.global_avg_pool(x)  # (batch_size, 256, 1, 1)
-        x = x.view(x.size(0), -1)  # Flatten to (batch_size, 256)
-        x = self.fc_layer(x)
+        x = x.view(-1, 32 * 32 * 3)  # Flatten CIFAR-10 images
+        x = torch.relu(self.fc1(x))
+        x = self.fc2(x)
         return x
 
-# Efficient convolution function
-def efficient_conv(builder, seed, in_channels, out_channels, stride):
-    return nn.Sequential(
-        builder.conv(in_channels, out_channels, kernel_size=3, stride=stride, padding=1, bias=False, seed=seed),
-        builder.bn(out_channels, seed=seed),
-        nn.ReLU(inplace=True)
-    )
-
-
-
-# Load the MNIST dataset
-def load_mnist():
-    transform = transforms.Compose([transforms.ToTensor(), transforms.Normalize((0.4914, 0.4822, 0.4465), (0.2023, 0.1994, 0.2010))])
-    train_dataset = datasets.CIFAR10(root='./data', train=True, transform=transform, download=True)
-    test_dataset = datasets.CIFAR10(root='./data', train=False, transform=transform, download=True)
-    return train_dataset, test_dataset
-
-train_data, test_data = load_mnist()
-print(f"Training dataset size: {len(train_data)}")
-print(f"Test dataset size: {len(test_data)}")
-
-# Split the training data into subsets for different clients with overlap
-def create_clients_with_overlap(train_data, num_clients=10, new_data_size=8000, overlap_size=2000):
-    all_indices = list(range(len(train_data)))
-    random.shuffle(all_indices)
-
-    # Ensure there are enough samples for all clients including overlap
-    assert num_clients * new_data_size + (num_clients * overlap_size) <= len(train_data), "Not enough data for overlap."
-
-    client_data = []
-    overlap_data = []
-
-    # Assign 8,000 unique samples per client
-    for i in range(num_clients):
-        start_idx = i * new_data_size
-        end_idx = start_idx + new_data_size
-        client_indices = all_indices[start_idx:end_idx]
-        client_data.append(client_indices)
-
-    # Assign 2,000 overlapping samples per client
-    for i in range(num_clients):
-        # Overlap between client `i` and client `i+1` (circular overlap)
-        overlap_indices = all_indices[
-            len(client_data) * new_data_size + i * overlap_size : len(client_data) * new_data_size + (i + 1) * overlap_size
-        ]
-        overlap_data.append(overlap_indices)
-
-    # Merge unique and overlapping data for each client
-    final_client_data = []
-    for i in range(num_clients):
-        current_client_data = client_data[i] + overlap_data[i % num_clients]
-        final_client_data.append(torch.utils.data.Subset(train_data, current_client_data))
-
-    return final_client_data
-
-def loss_fn(params, model, data, labels):
-    """Compute the loss given model parameters, input data, and labels."""
-    model.load_state_dict(params, strict=False)  # Assuming params is compatible with state_dict
-    output = model(data)
-    criterion = torch.nn.CrossEntropyLoss()  # Example loss function
-    return criterion(output, labels)
-
-# Local training function for each client
-def train_client(model, train_loader, epochs=5, lr=0.01):
-    model.train()
-    optimizer = optim.SGD(model.parameters(), lr=lr)
+# Training function for each car
+def train_car(car, data, targets, global_model_params, lr=0.1):
+    car.model.load_state_dict(global_model_params)
+      
     criterion = nn.CrossEntropyLoss()
-    for _ in range(epochs):
-        for data, labels in train_loader:
-            data, labels = data.to(device), labels.to(device)
-            params = model.state_dict()
-            # Compute gradient of the loss function
-            grad_fn = grad(lambda p: loss_fn(p, model, data, labels))  # Correctly uses JAX grad
-            gradients = grad_fn(params)
-            optimizer.step()
-            optimizer.zero_grad()
-    return model.state_dict()
+    optimizer = optim.SGD(car.model.parameters(), lr=lr)
 
-# Aggregate weights function (FedAvg)
-def aggregate_weights(global_model, client_models):
-    global_state_dict = global_model.state_dict()
-    
-    for key in global_state_dict.keys():
-        # Convert model parameters to float if they are in Long (integer) type
-        param_tensors = [client_models[i][key].float() if client_models[i][key].dtype == torch.long else client_models[i][key] 
-                         for i in range(len(client_models))]
+    car.model.train()
+    optimizer.zero_grad()
         
-        # Compute the average of the parameters across all clients
-        global_state_dict[key] = torch.stack(param_tensors, dim=0).mean(dim=0)
-    
-    global_model.load_state_dict(global_state_dict)
-    return global_model
+    outputs = car.model(data)
+    loss = criterion(outputs, targets)
+    loss.backward()
 
+    gradients = {name: param.grad.clone() for name, param in car.model.named_parameters() if param.grad is not None}
+    optimizer.step()
+    return gradients
 
-# Test function to evaluate model accuracy
-def test_model(model, test_loader):
+# Evaluate model accuracy
+def evaluate_model(model, test_data, test_labels):
     model.eval()
-    correct = 0
-    total = 0
     with torch.no_grad():
-        for data, labels in test_loader:
-            data, labels = data.to(device), labels.to(device)
-            outputs = model(data)
-            _, predicted = torch.max(outputs.data, 1)
-            total += labels.size(0)
-            correct += (predicted == labels).sum().item()
+        outputs = model(test_data)
+        _, predicted = torch.max(outputs.data, 1)
+        total = test_labels.size(0)
+        correct = (predicted == test_labels).sum().item()
     return 100 * correct / total
 
 # Define the Grid class
@@ -283,21 +126,34 @@ class Antenna:
         self.direction_index = (self.direction_index - 1) % 8
 
     def get_direction(self):
-        return Antenna.DIRECTIONS[self.direction_index]  
+        return Antenna.DIRECTIONS[self.direction_index]
 
+# Define the number of cars (clients) and the number of samples per client
+num_clients = 10
+samples_per_client = 5000
+
+# Ensure the CIFAR-10 training dataset has enough samples
+assert len(train_images_tensor) == num_clients * samples_per_client, \
+    "The dataset size does not match the expected split."
+
+# Split the dataset into 10 distinct parts
+car_data_splits = torch.chunk(train_images_tensor, num_clients)
+car_label_splits = torch.chunk(train_labels_tensor, num_clients)
+    
+    
 # Define the Car class
-class Car(NumPyClient):
+class Car:
     def __init__(self, id, data, targets, antenna_range=3):
         self.id = id
         self.antenna = Antenna()
         self.position = None
         self.data_history = []
         self.antenna_range = antenna_range
-        self.model = SimpleCNN()  # Each car has its own model
+        self.model = SimpleNet()  # Each car has its own model
         #self.data = train_images_tensor  # Using MNIST train images
         #self.targets = train_labels_tensor  # Using MNIST train labels
         self.data = data  # Assign distinct data to each car
-        # self.targets = targets  # Assign distinct labels to each car
+        self.targets = targets  # Assign distinct labels to each car
 
     def receive_data(self, data):
         self.data_history.append(data)
@@ -312,7 +168,7 @@ class Simulation:
         self.base_path_loss_probability = path_loss_probability
         self.active_cars = set()
         self.inactive_cars = set()
-        self.global_model = SimpleCNN()
+        self.global_model = SimpleNet()
         self.server_car = None
 
     def set_server_car(self, car):
@@ -340,21 +196,45 @@ class Simulation:
                 print(f"Data loss from Car {sender.id} to Car {receiver.id}")
         return receiving_cars
 
-    def train_step(self, client_loaders, lr=0.01):
+    def aggregate_gradients(self, gradients_list):
+        aggregated_gradients = {}
+        for gradients in gradients_list:
+            for name, grad in gradients.items():
+                if name not in aggregated_gradients:
+                    aggregated_gradients[name] = grad.clone()
+                else:
+                    aggregated_gradients[name] += grad
+        return aggregated_gradients
+
+    def update_global_model(self, aggregated_gradients, lr=0.1):
+        if not hasattr(self, 'optimizer'):
+            self.optimizer = optim.SGD(self.global_model.parameters(), lr=lr)
+
+        # Manually set gradients
+        for name, param in self.global_model.named_parameters():
+            if name in aggregated_gradients:
+                if param.grad is None:
+                    param.grad = aggregated_gradients[name] / len(aggregated_gradients)
+                else:
+                    param.grad.data.copy_(aggregated_gradients[name] / len(aggregated_gradients))
+
+        self.optimizer.step()
+        self.optimizer.zero_grad()  # Clear the gradients after the optimizer step
+
+    def train_step(self, lr=0.01):
         if not self.server_car:
             raise ValueError("Server car not set")
-        client_models = []
-        for client_id, client_loader in enumerate(client_loaders):
-            # Initialize a model for each client and load the global model state
-            local_model = SimpleCNN().to(device)
-            local_model.load_state_dict(self.global_model.state_dict())
-            # Train the local model and collect the updated state_dict
-            client_model_state = train_client(local_model, client_loader, epochs=epochs_per_client, lr=lr)
-            client_models.append(client_model_state)
-        # Aggregate client models using FedAvg
-        self.global_model = aggregate_weights(self.global_model, client_models)
-        #for car, _ in self.grid.cars:
-            #car.model.load_state_dict(self.global_model.state_dict())
+
+        gradients_list = []
+        for car, _ in self.grid.cars:
+            gradients = train_car(car, car.data, car.targets, self.global_model.state_dict(), lr=lr)
+            gradients_list.append(gradients)
+
+        aggregated_gradients = self.aggregate_gradients(gradients_list)
+        self.update_global_model(aggregated_gradients, lr=lr)
+
+        for car, _ in self.grid.cars:
+            car.model.load_state_dict(self.global_model.state_dict())
 
     def get_receivers(self, sender, direction):
         receivers = []
@@ -440,31 +320,20 @@ class Simulation:
             self.grid.empty_spaces.remove(car.position)
             self.grid.cars.append((car, car.position))
 
-num_clients=5
-epochs_per_client=5
-lr=0.01
-new_data_size = 7000
-overlap_size = 3000
-# Load the dataset
-train_data, test_data = load_mnist()
-# Create client datasets
-client_data_with_overlap = create_clients_with_overlap(
-    train_data, num_clients=num_clients, new_data_size=new_data_size, overlap_size=overlap_size
-)
-# Create data loaders for each client
-client_loaders_with_overlap = [
-    torch.utils.data.DataLoader(client_data_with_overlap[i], batch_size=64, shuffle=True) for i in range(num_clients)
-]
-test_loader = torch.utils.data.DataLoader(test_data, batch_size=64, shuffle=False)
 # Run simulation with MNIST data
 import csv
+
 # Initialize the grid and simulation, and add cars with unique datasets
 grid = Grid(5, 5)
 simulation = Simulation(grid)
-accuracies = []
+
 # Add 10 cars to the grid, each with a unique subset of data
 for i in range(num_clients):
-    car = Car(i, client_data_with_overlap[i], client_loaders_with_overlap[i])
+    car = Car(i, car_data_splits[i], car_label_splits[i])
     position = random.choice(list(grid.empty_spaces))
     grid.add_car(car, position)
+
 simulation.set_server_car(simulation.grid.cars[0][0])  # Set the first car as the server
+
+
+
