@@ -1,4 +1,4 @@
-# FVN setup on Cifar-10 dataset
+# FVC setup on Cifar-10 dataset
 
 from flwr.client import NumPyClient
 import torch
