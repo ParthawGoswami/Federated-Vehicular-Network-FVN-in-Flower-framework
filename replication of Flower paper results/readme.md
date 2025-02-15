@@ -1,6 +1,5 @@
 ## Replicating the results of Flower Paper results
 
-* Resource:
  ### c240g5 node from Wisconsin cluster
 * Specification: 32 nodes (Intel Skylake, 20 core, 2 disks, GPU)
 * CPU: Two Intel Xeon Silver 4114 10-core CPUs at 2.20 GHz
