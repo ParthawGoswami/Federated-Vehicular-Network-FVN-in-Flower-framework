@@ -5,6 +5,7 @@ import pandas as pd
 import numpy as np
 from tqdm import tqdm
 from sklearn.model_selection import train_test_split
+import matplotlib.pyplot as plt
 
 # Load and Preprocess Dataset
 
@@ -97,7 +98,7 @@ def fed_avg(global_model, client_models):
     return global_model
 
 # Federated Training Loop
-
+accuracies = []
 def federated_learning(num_rounds=10, clients_per_round=100, device='cuda'):
     # Initialize global model
     global_model = initialize_model()
@@ -123,6 +124,7 @@ def federated_learning(num_rounds=10, clients_per_round=100, device='cuda'):
         # Evaluate on test set
         accuracy = evaluate(global_model, test_loader, device)
         print(f"Round {round + 1} Test Accuracy: {accuracy:.2f}%")
+        accuracies.append(accuracy)
 
 def evaluate(model, dataloader, device='cuda'):
     model.eval()
@@ -144,3 +146,8 @@ def evaluate(model, dataloader, device='cuda'):
 if __name__ == '__main__':
     device = 'cuda' if torch.cuda.is_available() else 'cpu'
     federated_learning(num_rounds=60, clients_per_round=100, device=device);
+
+plt.plot(range(1, len(accuracies) + 1), accuracies, marker='o')
+plt.xlabel('Round')
+plt.ylabel('Accuracy')
+plt.show()
