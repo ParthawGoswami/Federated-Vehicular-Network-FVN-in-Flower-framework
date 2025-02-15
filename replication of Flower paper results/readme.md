@@ -7,5 +7,5 @@
 * Disk: One 1 TB 7200 RPM 6G SAS HDs
 * Disk: One Intel DC S3500 480 GB 6G SATA SSD
 * GPU: One NVIDIA 12GB PCI P100 GPU
-*NIC: Dual-port Mellanox 25Gb NIC (PCIe v3.0, 8 lanes) (both ports available for experiment use)
-*NIC: Onboard Intel i350 1Gb
+* NIC: Dual-port Mellanox 25Gb NIC (PCIe v3.0, 8 lanes) (both ports available for experiment use)
+* NIC: Onboard Intel i350 1Gb
