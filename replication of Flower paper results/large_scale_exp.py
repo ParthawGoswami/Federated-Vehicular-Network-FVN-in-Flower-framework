@@ -108,7 +108,8 @@ def federated_learning(num_rounds=10, clients_per_round=100, device='cuda'):
     for round in range(num_rounds):
         print(f"Round {round + 1}/{num_rounds}")
         # Sample clients
-        selected_clients = np.random.choice(clients, size=clients_per_round, replace=False)
+        selected_indices = np.random.choice(range(len(clients)), size=clients_per_round, replace=False)
+        selected_clients = [clients[i] for i in selected_indices]
         
         # Train clients in parallel (simplified; use multiprocessing in practice)
         client_models = []
@@ -127,6 +128,7 @@ def federated_learning(num_rounds=10, clients_per_round=100, device='cuda'):
         accuracies.append(accuracy)
 
 def evaluate(model, dataloader, device='cuda'):
+    model.to(device)
     model.eval()
     correct = 0
     total = 0
