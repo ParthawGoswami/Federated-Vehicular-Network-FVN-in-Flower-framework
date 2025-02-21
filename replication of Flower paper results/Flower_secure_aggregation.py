@@ -1,3 +1,4 @@
+# 0% dropout
 !pip install -q "flwr[simulation]" flwr-datasets
 import flwr as fl
 import numpy as np
