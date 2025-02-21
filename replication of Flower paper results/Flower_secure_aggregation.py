@@ -36,7 +36,7 @@ def secure_aggregation_simulation(vector_size, dropout_rate):
     fl.simulation.start_simulation(
         client_fn=lambda cid: FLClient(vector_size),
         num_clients=num_clients,
-        config=fl.server.ServerConfig(num_rounds=40),
+        config=fl.server.ServerConfig(num_rounds=1),
         strategy=strategy,
     )
     
