@@ -1,0 +1,1080 @@
+Timestamp: Sat Mar  1 11:21:39 PM EST 2025
+CPU Usage:
+11:21:39 PM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+11:21:40 PM  all    0.06    0.00    0.07    0.00    0.00    0.00    0.00    0.00    0.00   99.87
+Memory Usage:
+               total        used        free      shared  buff/cache   available
+Mem:           503Gi       5.7Gi       484Gi        10Gi        12Gi       484Gi
+Swap:          8.0Gi          0B       8.0Gi
+-------------------------
+Timestamp: Sat Mar  1 11:22:40 PM EST 2025
+CPU Usage:
+11:22:40 PM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+11:22:41 PM  all    0.09    0.00    0.10    0.00    0.00    0.00    0.00    0.00    0.00   99.80
+Memory Usage:
+               total        used        free      shared  buff/cache   available
+Mem:           503Gi       5.7Gi       484Gi        10Gi        12Gi       484Gi
+Swap:          8.0Gi          0B       8.0Gi
+-------------------------
+Timestamp: Sat Mar  1 11:23:41 PM EST 2025
+CPU Usage:
+11:23:41 PM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+11:23:42 PM  all    0.09    0.00    0.06    0.00    0.00    0.00    0.00    0.00    0.00   99.85
+Memory Usage:
+               total        used        free      shared  buff/cache   available
+Mem:           503Gi       5.7Gi       484Gi        10Gi        12Gi       484Gi
+Swap:          8.0Gi          0B       8.0Gi
+-------------------------
+Timestamp: Sat Mar  1 11:24:42 PM EST 2025
+CPU Usage:
+11:24:42 PM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+11:24:43 PM  all    2.22    0.75    1.14    0.14    0.00    0.04    0.00    0.00    0.00   95.71
+Memory Usage:
+               total        used        free      shared  buff/cache   available
+Mem:           503Gi        14Gi       481Gi       5.2Gi       7.9Gi       480Gi
+Swap:          8.0Gi          0B       8.0Gi
+-------------------------
+Timestamp: Sat Mar  1 11:25:43 PM EST 2025
+CPU Usage:
+11:25:43 PM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+11:25:44 PM  all    2.06    0.93    1.09    0.00    0.00    0.07    0.00    0.00    0.00   95.85
+Memory Usage:
+               total        used        free      shared  buff/cache   available
+Mem:           503Gi        15Gi       480Gi       5.3Gi       8.0Gi       480Gi
+Swap:          8.0Gi          0B       8.0Gi
+-------------------------
+Timestamp: Sat Mar  1 11:26:44 PM EST 2025
+CPU Usage:
+11:26:44 PM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+11:26:45 PM  all    0.29    0.00    0.26    0.00    0.00    0.00    0.00    0.00    0.00   99.45
+Memory Usage:
+               total        used        free      shared  buff/cache   available
+Mem:           503Gi       5.6Gi       489Gi       5.2Gi       7.8Gi       489Gi
+Swap:          8.0Gi          0B       8.0Gi
+-------------------------
+Timestamp: Sat Mar  1 11:27:45 PM EST 2025
+CPU Usage:
+11:27:45 PM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+11:27:46 PM  all    1.37    0.31    0.60    0.00    0.00    0.05    0.00    0.00    0.00   97.67
+Memory Usage:
+               total        used        free      shared  buff/cache   available
+Mem:           503Gi        14Gi       479Gi       7.1Gi       9.8Gi       479Gi
+Swap:          8.0Gi          0B       8.0Gi
+-------------------------
+Timestamp: Sat Mar  1 11:28:46 PM EST 2025
+CPU Usage:
+11:28:46 PM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+11:28:47 PM  all    1.43    0.31    0.66    0.00    0.00    0.05    0.00    0.00    0.00   97.55
+Memory Usage:
+               total        used        free      shared  buff/cache   available
+Mem:           503Gi        14Gi       479Gi       7.0Gi       9.7Gi       479Gi
+Swap:          8.0Gi          0B       8.0Gi
+-------------------------
+Timestamp: Sat Mar  1 11:29:47 PM EST 2025
+CPU Usage:
+11:29:47 PM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+11:29:48 PM  all    1.32    0.28    0.53    0.00    0.00    0.05    0.00    0.00    0.00   97.81
+Memory Usage:
+               total        used        free      shared  buff/cache   available
+Mem:           503Gi        14Gi       477Gi       9.1Gi        11Gi       476Gi
+Swap:          8.0Gi          0B       8.0Gi
+-------------------------
+Timestamp: Sat Mar  1 11:30:48 PM EST 2025
+CPU Usage:
+11:30:48 PM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+11:30:49 PM  all    1.22    0.24    0.53    0.05    0.00    0.05    0.00    0.00    0.00   97.91
+Memory Usage:
+               total        used        free      shared  buff/cache   available
+Mem:           503Gi        14Gi       476Gi       9.1Gi        11Gi       476Gi
+Swap:          8.0Gi          0B       8.0Gi
+-------------------------
+Timestamp: Sat Mar  1 11:31:49 PM EST 2025
+CPU Usage:
+11:31:49 PM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+11:31:50 PM  all    1.31    0.18    0.44    0.08    0.00    0.01    0.00    0.00    0.00   97.98
+Memory Usage:
+               total        used        free      shared  buff/cache   available
+Mem:           503Gi        14Gi       476Gi       8.9Gi        11Gi       476Gi
+Swap:          8.0Gi          0B       8.0Gi
+-------------------------
+Timestamp: Sat Mar  1 11:32:50 PM EST 2025
+CPU Usage:
+11:32:50 PM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+11:32:51 PM  all    0.97    0.16    1.24    0.00    0.00    0.02    0.00    0.00    0.00   97.61
+Memory Usage:
+               total        used        free      shared  buff/cache   available
+Mem:           503Gi        14Gi       477Gi       8.2Gi        10Gi       477Gi
+Swap:          8.0Gi          0B       8.0Gi
+-------------------------
+Timestamp: Sat Mar  1 11:33:51 PM EST 2025
+CPU Usage:
+11:33:51 PM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+11:33:52 PM  all    0.81    0.16    1.23    0.00    0.00    0.04    0.00    0.00    0.00   97.76
+Memory Usage:
+               total        used        free      shared  buff/cache   available
+Mem:           503Gi        15Gi       476Gi       8.3Gi        10Gi       476Gi
+Swap:          8.0Gi          0B       8.0Gi
+-------------------------
+Timestamp: Sat Mar  1 11:34:52 PM EST 2025
+CPU Usage:
+11:34:52 PM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+11:34:53 PM  all    0.73    0.20    1.30    0.00    0.00    0.05    0.00    0.00    0.00   97.73
+Memory Usage:
+               total        used        free      shared  buff/cache   available
+Mem:           503Gi        15Gi       477Gi       8.3Gi        10Gi       476Gi
+Swap:          8.0Gi          0B       8.0Gi
+-------------------------
+Timestamp: Sat Mar  1 11:35:53 PM EST 2025
+CPU Usage:
+11:35:53 PM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+11:35:54 PM  all    0.82    0.20    1.26    0.04    0.00    0.02    0.00    0.00    0.00   97.66
+Memory Usage:
+               total        used        free      shared  buff/cache   available
+Mem:           503Gi        15Gi       477Gi       8.3Gi        10Gi       476Gi
+Swap:          8.0Gi          0B       8.0Gi
+-------------------------
+Timestamp: Sat Mar  1 11:36:54 PM EST 2025
+CPU Usage:
+11:36:54 PM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+11:36:55 PM  all    0.79    0.20    1.31    0.00    0.00    0.02    0.00    0.00    0.00   97.68
+Memory Usage:
+               total        used        free      shared  buff/cache   available
+Mem:           503Gi        15Gi       477Gi       8.2Gi        10Gi       476Gi
+Swap:          8.0Gi          0B       8.0Gi
+-------------------------
+Timestamp: Sat Mar  1 11:37:55 PM EST 2025
+CPU Usage:
+11:37:55 PM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+11:37:56 PM  all    0.83    0.11    1.24    0.00    0.00    0.04    0.00    0.00    0.00   97.78
+Memory Usage:
+               total        used        free      shared  buff/cache   available
+Mem:           503Gi        15Gi       476Gi       8.3Gi        11Gi       476Gi
+Swap:          8.0Gi          0B       8.0Gi
+-------------------------
+Timestamp: Sat Mar  1 11:38:56 PM EST 2025
+CPU Usage:
+11:38:56 PM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+11:38:57 PM  all    0.81    0.17    1.16    0.00    0.00    0.03    0.00    0.00    0.00   97.84
+Memory Usage:
+               total        used        free      shared  buff/cache   available
+Mem:           503Gi        15Gi       476Gi       8.4Gi        11Gi       476Gi
+Swap:          8.0Gi          0B       8.0Gi
+-------------------------
+Timestamp: Sat Mar  1 11:39:57 PM EST 2025
+CPU Usage:
+11:39:57 PM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+11:39:58 PM  all    0.79    0.11    1.24    0.01    0.00    0.01    0.00    0.00    0.00   97.84
+Memory Usage:
+               total        used        free      shared  buff/cache   available
+Mem:           503Gi        15Gi       476Gi       9.1Gi        11Gi       476Gi
+Swap:          8.0Gi          0B       8.0Gi
+-------------------------
+Timestamp: Sat Mar  1 11:40:58 PM EST 2025
+CPU Usage:
+11:40:58 PM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+11:40:59 PM  all    1.02    0.16    1.19    0.00    0.00    0.01    0.00    0.00    0.00   97.62
+Memory Usage:
+               total        used        free      shared  buff/cache   available
+Mem:           503Gi        15Gi       475Gi       9.3Gi        12Gi       475Gi
+Swap:          8.0Gi          0B       8.0Gi
+-------------------------
+Timestamp: Sat Mar  1 11:41:59 PM EST 2025
+CPU Usage:
+11:41:59 PM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+11:42:00 PM  all    0.89    0.17    1.27    0.00    0.00    0.02    0.00    0.00    0.00   97.65
+Memory Usage:
+               total        used        free      shared  buff/cache   available
+Mem:           503Gi        15Gi       475Gi       9.3Gi        12Gi       475Gi
+Swap:          8.0Gi          0B       8.0Gi
+-------------------------
+Timestamp: Sat Mar  1 11:43:00 PM EST 2025
+CPU Usage:
+11:43:00 PM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+11:43:01 PM  all    0.74    0.15    1.24    0.00    0.00    0.03    0.00    0.00    0.00   97.84
+Memory Usage:
+               total        used        free      shared  buff/cache   available
+Mem:           503Gi        15Gi       475Gi       9.4Gi        12Gi       475Gi
+Swap:          8.0Gi          0B       8.0Gi
+-------------------------
+Timestamp: Sat Mar  1 11:44:01 PM EST 2025
+CPU Usage:
+11:44:01 PM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+11:44:02 PM  all    0.88    0.14    1.38    0.08    0.00    0.02    0.00    0.00    0.00   97.50
+Memory Usage:
+               total        used        free      shared  buff/cache   available
+Mem:           503Gi        15Gi       476Gi       9.2Gi        11Gi       475Gi
+Swap:          8.0Gi          0B       8.0Gi
+-------------------------
+Timestamp: Sat Mar  1 11:45:02 PM EST 2025
+CPU Usage:
+11:45:02 PM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+11:45:03 PM  all    0.87    0.18    1.32    0.00    0.00    0.02    0.00    0.00    0.00   97.61
+Memory Usage:
+               total        used        free      shared  buff/cache   available
+Mem:           503Gi        15Gi       475Gi       9.2Gi        11Gi       475Gi
+Swap:          8.0Gi          0B       8.0Gi
+-------------------------
+Timestamp: Sat Mar  1 11:46:03 PM EST 2025
+CPU Usage:
+11:46:03 PM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+11:46:04 PM  all    0.83    0.17    1.42    0.02    0.00    0.00    0.00    0.00    0.00   97.56
+Memory Usage:
+               total        used        free      shared  buff/cache   available
+Mem:           503Gi        15Gi       475Gi       9.2Gi        11Gi       475Gi
+Swap:          8.0Gi          0B       8.0Gi
+-------------------------
+Timestamp: Sat Mar  1 11:47:04 PM EST 2025
+CPU Usage:
+11:47:04 PM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+11:47:05 PM  all    0.94    0.13    1.36    0.06    0.00    0.02    0.00    0.00    0.00   97.49
+Memory Usage:
+               total        used        free      shared  buff/cache   available
+Mem:           503Gi        15Gi       475Gi       9.9Gi        12Gi       475Gi
+Swap:          8.0Gi          0B       8.0Gi
+-------------------------
+Timestamp: Sat Mar  1 11:48:05 PM EST 2025
+CPU Usage:
+11:48:05 PM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+11:48:06 PM  all    0.82    0.12    1.30    0.00    0.00    0.01    0.00    0.00    0.00   97.75
+Memory Usage:
+               total        used        free      shared  buff/cache   available
+Mem:           503Gi        15Gi       474Gi        10Gi        13Gi       474Gi
+Swap:          8.0Gi          0B       8.0Gi
+-------------------------
+Timestamp: Sat Mar  1 11:49:06 PM EST 2025
+CPU Usage:
+11:49:06 PM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+11:49:07 PM  all    0.88    0.13    1.21    0.00    0.00    0.02    0.00    0.00    0.00   97.76
+Memory Usage:
+               total        used        free      shared  buff/cache   available
+Mem:           503Gi        16Gi       474Gi        10Gi        13Gi       474Gi
+Swap:          8.0Gi          0B       8.0Gi
+-------------------------
+Timestamp: Sat Mar  1 11:50:07 PM EST 2025
+CPU Usage:
+11:50:07 PM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+11:50:08 PM  all    1.02    0.24    1.37    0.00    0.00    0.02    0.00    0.00    0.00   97.34
+Memory Usage:
+               total        used        free      shared  buff/cache   available
+Mem:           503Gi        15Gi       474Gi        10Gi        13Gi       474Gi
+Swap:          8.0Gi          0B       8.0Gi
+-------------------------
+Timestamp: Sat Mar  1 11:51:08 PM EST 2025
+CPU Usage:
+11:51:08 PM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+11:51:09 PM  all    0.91    0.17    1.24    0.00    0.00    0.04    0.00    0.00    0.00   97.65
+Memory Usage:
+               total        used        free      shared  buff/cache   available
+Mem:           503Gi        15Gi       475Gi       9.9Gi        12Gi       475Gi
+Swap:          8.0Gi          0B       8.0Gi
+-------------------------
+Timestamp: Sat Mar  1 11:52:09 PM EST 2025
+CPU Usage:
+11:52:09 PM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+11:52:10 PM  all    0.91    0.13    1.35    0.07    0.00    0.02    0.00    0.00    0.00   97.52
+Memory Usage:
+               total        used        free      shared  buff/cache   available
+Mem:           503Gi        16Gi       474Gi        10Gi        12Gi       474Gi
+Swap:          8.0Gi          0B       8.0Gi
+-------------------------
+Timestamp: Sat Mar  1 11:53:10 PM EST 2025
+CPU Usage:
+11:53:10 PM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+11:53:11 PM  all    1.00    0.25    1.31    0.05    0.00    0.02    0.00    0.00    0.00   97.37
+Memory Usage:
+               total        used        free      shared  buff/cache   available
+Mem:           503Gi        16Gi       474Gi        10Gi        12Gi       473Gi
+Swap:          8.0Gi          0B       8.0Gi
+-------------------------
+Timestamp: Sat Mar  1 11:54:11 PM EST 2025
+CPU Usage:
+11:54:11 PM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+11:54:12 PM  all    0.74    0.11    0.36    0.06    0.00    0.05    0.00    0.00    0.00   98.68
+Memory Usage:
+               total        used        free      shared  buff/cache   available
+Mem:           503Gi        16Gi       474Gi        10Gi        12Gi       474Gi
+Swap:          8.0Gi          0B       8.0Gi
+-------------------------
+Timestamp: Sat Mar  1 11:55:12 PM EST 2025
+CPU Usage:
+11:55:12 PM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+11:55:13 PM  all    2.15    0.87    0.98    0.07    0.00    0.07    0.00    0.00    0.00   95.85
+Memory Usage:
+               total        used        free      shared  buff/cache   available
+Mem:           503Gi        15Gi       480Gi       5.3Gi       8.1Gi       479Gi
+Swap:          8.0Gi          0B       8.0Gi
+-------------------------
+Timestamp: Sat Mar  1 11:56:13 PM EST 2025
+CPU Usage:
+11:56:14 PM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+11:56:15 PM  all    2.01    1.03    1.01    0.00    0.00    0.07    0.00    0.00    0.00   95.88
+Memory Usage:
+               total        used        free      shared  buff/cache   available
+Mem:           503Gi        15Gi       479Gi       5.4Gi       8.2Gi       479Gi
+Swap:          8.0Gi          0B       8.0Gi
+-------------------------
+Timestamp: Sat Mar  1 11:57:15 PM EST 2025
+CPU Usage:
+11:57:15 PM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+11:57:16 PM  all    0.10    0.00    0.11    0.00    0.00    0.00    0.00    0.00    0.00   99.79
+Memory Usage:
+               total        used        free      shared  buff/cache   available
+Mem:           503Gi       5.3Gi       490Gi       5.2Gi       8.0Gi       490Gi
+Swap:          8.0Gi          0B       8.0Gi
+-------------------------
+Timestamp: Sat Mar  1 11:58:16 PM EST 2025
+CPU Usage:
+11:58:16 PM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+11:58:17 PM  all    0.63    0.00    0.87    0.00    0.00    0.01    0.00    0.00    0.00   98.49
+Memory Usage:
+               total        used        free      shared  buff/cache   available
+Mem:           503Gi       5.3Gi       490Gi       5.2Gi       8.0Gi       490Gi
+Swap:          8.0Gi          0B       8.0Gi
+-------------------------
+Timestamp: Sat Mar  1 11:59:17 PM EST 2025
+CPU Usage:
+11:59:17 PM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+11:59:18 PM  all   22.14   39.54   19.71    0.00    0.00    0.11    0.00    0.00    0.00   18.50
+Memory Usage:
+               total        used        free      shared  buff/cache   available
+Mem:           503Gi        15Gi       479Gi       5.3Gi       8.1Gi       479Gi
+Swap:          8.0Gi          0B       8.0Gi
+-------------------------
+Timestamp: Sun Mar  2 12:00:18 AM EST 2025
+CPU Usage:
+12:00:18 AM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+12:00:19 AM  all    1.27    0.20    0.54    0.00    0.00    0.02    0.00    0.00    0.00   97.96
+Memory Usage:
+               total        used        free      shared  buff/cache   available
+Mem:           503Gi        14Gi       476Gi       9.1Gi        11Gi       476Gi
+Swap:          8.0Gi          0B       8.0Gi
+-------------------------
+Timestamp: Sun Mar  2 12:01:19 AM EST 2025
+CPU Usage:
+12:01:19 AM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+12:01:20 AM  all    1.34    0.22    0.50    0.01    0.00    0.02    0.00    0.00    0.00   97.90
+Memory Usage:
+               total        used        free      shared  buff/cache   available
+Mem:           503Gi        15Gi       476Gi       8.9Gi        11Gi       476Gi
+Swap:          8.0Gi          0B       8.0Gi
+-------------------------
+Timestamp: Sun Mar  2 12:02:20 AM EST 2025
+CPU Usage:
+12:02:20 AM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+12:02:21 AM  all    0.90    0.18    1.43    0.08    0.00    0.03    0.00    0.00    0.00   97.38
+Memory Usage:
+               total        used        free      shared  buff/cache   available
+Mem:           503Gi        14Gi       477Gi       7.9Gi        10Gi       477Gi
+Swap:          8.0Gi          0B       8.0Gi
+-------------------------
+Timestamp: Sun Mar  2 12:03:21 AM EST 2025
+CPU Usage:
+12:03:21 AM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+12:03:22 AM  all    0.82    0.21    1.32    0.00    0.00    0.02    0.00    0.00    0.00   97.64
+Memory Usage:
+               total        used        free      shared  buff/cache   available
+Mem:           503Gi        15Gi       476Gi       8.3Gi        11Gi       476Gi
+Swap:          8.0Gi          0B       8.0Gi
+-------------------------
+Timestamp: Sun Mar  2 12:04:22 AM EST 2025
+CPU Usage:
+12:04:22 AM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+12:04:23 AM  all    0.75    0.13    1.27    0.00    0.00    0.03    0.00    0.00    0.00   97.82
+Memory Usage:
+               total        used        free      shared  buff/cache   available
+Mem:           503Gi        15Gi       476Gi       8.3Gi        11Gi       476Gi
+Swap:          8.0Gi          0B       8.0Gi
+-------------------------
+Timestamp: Sun Mar  2 12:05:23 AM EST 2025
+CPU Usage:
+12:05:23 AM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+12:05:24 AM  all    0.76    0.16    1.24    0.00    0.00    0.02    0.00    0.00    0.00   97.82
+Memory Usage:
+               total        used        free      shared  buff/cache   available
+Mem:           503Gi        15Gi       476Gi       8.5Gi        11Gi       476Gi
+Swap:          8.0Gi          0B       8.0Gi
+-------------------------
+Timestamp: Sun Mar  2 12:06:24 AM EST 2025
+CPU Usage:
+12:06:24 AM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+12:06:25 AM  all    0.79    0.16    1.34    0.21    0.00    0.03    0.00    0.00    0.00   97.47
+Memory Usage:
+               total        used        free      shared  buff/cache   available
+Mem:           503Gi        15Gi       476Gi       8.3Gi        11Gi       476Gi
+Swap:          8.0Gi          0B       8.0Gi
+-------------------------
+Timestamp: Sun Mar  2 12:07:25 AM EST 2025
+CPU Usage:
+12:07:25 AM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+12:07:26 AM  all    0.79    0.20    1.26    0.00    0.00    0.02    0.00    0.00    0.00   97.74
+Memory Usage:
+               total        used        free      shared  buff/cache   available
+Mem:           503Gi        15Gi       476Gi       8.3Gi        11Gi       476Gi
+Swap:          8.0Gi          0B       8.0Gi
+-------------------------
+Timestamp: Sun Mar  2 12:08:26 AM EST 2025
+CPU Usage:
+12:08:26 AM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+12:08:27 AM  all    0.76    0.12    1.28    0.00    0.00    0.02    0.00    0.00    0.00   97.81
+Memory Usage:
+               total        used        free      shared  buff/cache   available
+Mem:           503Gi        15Gi       476Gi       8.3Gi        11Gi       476Gi
+Swap:          8.0Gi          0B       8.0Gi
+-------------------------
+Timestamp: Sun Mar  2 12:09:27 AM EST 2025
+CPU Usage:
+12:09:27 AM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+12:09:28 AM  all    0.83    0.17    1.41    0.00    0.00    0.03    0.00    0.00    0.00   97.56
+Memory Usage:
+               total        used        free      shared  buff/cache   available
+Mem:           503Gi        15Gi       476Gi       9.0Gi        11Gi       476Gi
+Swap:          8.0Gi          0B       8.0Gi
+-------------------------
+Timestamp: Sun Mar  2 12:10:28 AM EST 2025
+CPU Usage:
+12:10:28 AM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+12:10:29 AM  all    0.75    0.18    1.20    0.00    0.00    0.02    0.00    0.00    0.00   97.84
+Memory Usage:
+               total        used        free      shared  buff/cache   available
+Mem:           503Gi        15Gi       475Gi       9.2Gi        12Gi       475Gi
+Swap:          8.0Gi          0B       8.0Gi
+-------------------------
+Timestamp: Sun Mar  2 12:11:29 AM EST 2025
+CPU Usage:
+12:11:29 AM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+12:11:30 AM  all    0.89    0.26    1.21    0.01    0.00    0.02    0.00    0.00    0.00   97.61
+Memory Usage:
+               total        used        free      shared  buff/cache   available
+Mem:           503Gi        15Gi       475Gi       9.3Gi        12Gi       475Gi
+Swap:          8.0Gi          0B       8.0Gi
+-------------------------
+Timestamp: Sun Mar  2 12:12:30 AM EST 2025
+CPU Usage:
+12:12:30 AM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+12:12:31 AM  all    0.83    0.19    1.21    0.00    0.00    0.04    0.00    0.00    0.00   97.73
+Memory Usage:
+               total        used        free      shared  buff/cache   available
+Mem:           503Gi        15Gi       475Gi       9.3Gi        12Gi       475Gi
+Swap:          8.0Gi          0B       8.0Gi
+-------------------------
+Timestamp: Sun Mar  2 12:13:31 AM EST 2025
+CPU Usage:
+12:13:31 AM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+12:13:32 AM  all    0.82    0.12    1.26    0.01    0.00    0.04    0.00    0.00    0.00   97.76
+Memory Usage:
+               total        used        free      shared  buff/cache   available
+Mem:           503Gi        15Gi       476Gi       9.0Gi        11Gi       476Gi
+Swap:          8.0Gi          0B       8.0Gi
+-------------------------
+Timestamp: Sun Mar  2 12:14:32 AM EST 2025
+CPU Usage:
+12:14:32 AM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+12:14:33 AM  all    0.91    0.17    1.24    0.01    0.00    0.02    0.00    0.00    0.00   97.65
+Memory Usage:
+               total        used        free      shared  buff/cache   available
+Mem:           503Gi        16Gi       475Gi       9.2Gi        12Gi       475Gi
+Swap:          8.0Gi          0B       8.0Gi
+-------------------------
+Timestamp: Sun Mar  2 12:15:33 AM EST 2025
+CPU Usage:
+12:15:33 AM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+12:15:34 AM  all    0.81    0.20    1.27    0.06    0.00    0.02    0.00    0.00    0.00   97.64
+Memory Usage:
+               total        used        free      shared  buff/cache   available
+Mem:           503Gi        16Gi       475Gi       9.2Gi        12Gi       475Gi
+Swap:          8.0Gi          0B       8.0Gi
+-------------------------
+Timestamp: Sun Mar  2 12:16:34 AM EST 2025
+CPU Usage:
+12:16:34 AM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+12:16:35 AM  all    0.75    0.29    1.98    0.00    0.00    0.05    0.00    0.00    0.00   96.94
+Memory Usage:
+               total        used        free      shared  buff/cache   available
+Mem:           503Gi        14Gi       477Gi       8.6Gi        11Gi       477Gi
+Swap:          8.0Gi          0B       8.0Gi
+-------------------------
+Timestamp: Sun Mar  2 12:17:35 AM EST 2025
+CPU Usage:
+12:17:35 AM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+12:17:36 AM  all    0.92    0.15    1.25    0.00    0.00    0.03    0.00    0.00    0.00   97.65
+Memory Usage:
+               total        used        free      shared  buff/cache   available
+Mem:           503Gi        15Gi       474Gi        10Gi        13Gi       474Gi
+Swap:          8.0Gi          0B       8.0Gi
+-------------------------
+Timestamp: Sun Mar  2 12:18:36 AM EST 2025
+CPU Usage:
+12:18:36 AM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+12:18:37 AM  all    0.90    0.17    1.25    0.00    0.00    0.01    0.00    0.00    0.00   97.67
+Memory Usage:
+               total        used        free      shared  buff/cache   available
+Mem:           503Gi        16Gi       474Gi        10Gi        13Gi       474Gi
+Swap:          8.0Gi          0B       8.0Gi
+-------------------------
+Timestamp: Sun Mar  2 12:19:37 AM EST 2025
+CPU Usage:
+12:19:37 AM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+12:19:38 AM  all    0.93    0.21    1.19    0.00    0.00    0.02    0.00    0.00    0.00   97.65
+Memory Usage:
+               total        used        free      shared  buff/cache   available
+Mem:           503Gi        15Gi       474Gi        10Gi        13Gi       474Gi
+Swap:          8.0Gi          0B       8.0Gi
+-------------------------
+Timestamp: Sun Mar  2 12:20:38 AM EST 2025
+CPU Usage:
+12:20:38 AM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+12:20:39 AM  all    0.81    0.27    2.07    0.00    0.00    0.02    0.00    0.00    0.00   96.82
+Memory Usage:
+               total        used        free      shared  buff/cache   available
+Mem:           503Gi        14Gi       476Gi       8.9Gi        11Gi       476Gi
+Swap:          8.0Gi          0B       8.0Gi
+-------------------------
+Timestamp: Sun Mar  2 12:21:39 AM EST 2025
+CPU Usage:
+12:21:39 AM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+12:21:40 AM  all    0.96    0.21    1.35    0.09    0.00    0.05    0.00    0.00    0.00   97.34
+Memory Usage:
+               total        used        free      shared  buff/cache   available
+Mem:           503Gi        16Gi       474Gi        10Gi        13Gi       474Gi
+Swap:          8.0Gi          0B       8.0Gi
+-------------------------
+Timestamp: Sun Mar  2 12:22:40 AM EST 2025
+CPU Usage:
+12:22:40 AM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+12:22:41 AM  all    0.83    0.11    1.27    0.01    0.00    0.01    0.00    0.00    0.00   97.78
+Memory Usage:
+               total        used        free      shared  buff/cache   available
+Mem:           503Gi        16Gi       473Gi        10Gi        13Gi       474Gi
+Swap:          8.0Gi          0B       8.0Gi
+-------------------------
+Timestamp: Sun Mar  2 12:23:41 AM EST 2025
+CPU Usage:
+12:23:41 AM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+12:23:42 AM  all    0.94    0.19    1.25    0.01    0.00    0.06    0.00    0.00    0.00   97.55
+Memory Usage:
+               total        used        free      shared  buff/cache   available
+Mem:           503Gi        16Gi       473Gi        10Gi        13Gi       474Gi
+Swap:          8.0Gi          0B       8.0Gi
+-------------------------
+Timestamp: Sun Mar  2 12:24:42 AM EST 2025
+CPU Usage:
+12:24:42 AM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+12:24:43 AM  all    0.17    0.00    0.41    0.00    0.00    0.00    0.00    0.00    0.00   99.42
+Memory Usage:
+               total        used        free      shared  buff/cache   available
+Mem:           503Gi       5.7Gi       489Gi       5.2Gi       8.1Gi       489Gi
+Swap:          8.0Gi          0B       8.0Gi
+-------------------------
+Timestamp: Sun Mar  2 12:25:43 AM EST 2025
+CPU Usage:
+12:25:43 AM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+12:25:44 AM  all    2.33    1.27    1.01    0.10    0.00    0.08    0.00    0.00    0.00   95.21
+Memory Usage:
+               total        used        free      shared  buff/cache   available
+Mem:           503Gi        15Gi       479Gi       5.3Gi       8.3Gi       479Gi
+Swap:          8.0Gi          0B       8.0Gi
+-------------------------
+Timestamp: Sun Mar  2 12:26:44 AM EST 2025
+CPU Usage:
+12:26:44 AM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+12:26:45 AM  all    1.79    1.05    1.04    0.08    0.00    0.07    0.00    0.00    0.00   95.98
+Memory Usage:
+               total        used        free      shared  buff/cache   available
+Mem:           503Gi        16Gi       478Gi       5.4Gi       8.4Gi       478Gi
+Swap:          8.0Gi          0B       8.0Gi
+-------------------------
+Timestamp: Sun Mar  2 12:27:45 AM EST 2025
+CPU Usage:
+12:27:45 AM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+12:27:46 AM  all    1.56    0.28    0.65    0.00    0.00    0.03    0.00    0.00    0.00   97.47
+Memory Usage:
+               total        used        free      shared  buff/cache   available
+Mem:           503Gi        14Gi       478Gi       7.1Gi        10Gi       478Gi
+Swap:          8.0Gi          0B       8.0Gi
+-------------------------
+Timestamp: Sun Mar  2 12:28:46 AM EST 2025
+CPU Usage:
+12:28:46 AM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+12:28:47 AM  all    1.59    0.31    0.60    0.00    0.00    0.03    0.00    0.00    0.00   97.47
+Memory Usage:
+               total        used        free      shared  buff/cache   available
+Mem:           503Gi        14Gi       478Gi       7.0Gi        10Gi       478Gi
+Swap:          8.0Gi          0B       8.0Gi
+-------------------------
+Timestamp: Sun Mar  2 12:29:47 AM EST 2025
+CPU Usage:
+12:29:47 AM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+12:29:48 AM  all    1.39    0.26    0.57    0.00    0.00    0.05    0.00    0.00    0.00   97.72
+Memory Usage:
+               total        used        free      shared  buff/cache   available
+Mem:           503Gi        14Gi       476Gi       9.1Gi        12Gi       476Gi
+Swap:          8.0Gi          0B       8.0Gi
+-------------------------
+Timestamp: Sun Mar  2 12:30:48 AM EST 2025
+CPU Usage:
+12:30:48 AM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+12:30:49 AM  all    1.30    0.24    0.60    0.13    0.00    0.04    0.00    0.00    0.00   97.69
+Memory Usage:
+               total        used        free      shared  buff/cache   available
+Mem:           503Gi        14Gi       476Gi       8.8Gi        11Gi       476Gi
+Swap:          8.0Gi          0B       8.0Gi
+-------------------------
+Timestamp: Sun Mar  2 12:31:49 AM EST 2025
+CPU Usage:
+12:31:49 AM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+12:31:50 AM  all    1.30    0.24    0.55    0.00    0.00    0.03    0.00    0.00    0.00   97.88
+Memory Usage:
+               total        used        free      shared  buff/cache   available
+Mem:           503Gi        14Gi       476Gi       8.9Gi        11Gi       476Gi
+Swap:          8.0Gi          0B       8.0Gi
+-------------------------
+Timestamp: Sun Mar  2 12:32:50 AM EST 2025
+CPU Usage:
+12:32:51 AM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+12:32:52 AM  all    0.78    0.14    1.27    0.06    0.00    0.02    0.00    0.00    0.00   97.74
+Memory Usage:
+               total        used        free      shared  buff/cache   available
+Mem:           503Gi        15Gi       476Gi       8.2Gi        11Gi       476Gi
+Swap:          8.0Gi          0B       8.0Gi
+-------------------------
+Timestamp: Sun Mar  2 12:33:52 AM EST 2025
+CPU Usage:
+12:33:52 AM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+12:33:53 AM  all    0.78    0.17    1.18    0.00    0.00    0.01    0.00    0.00    0.00   97.87
+Memory Usage:
+               total        used        free      shared  buff/cache   available
+Mem:           503Gi        15Gi       476Gi       8.3Gi        11Gi       476Gi
+Swap:          8.0Gi          0B       8.0Gi
+-------------------------
+Timestamp: Sun Mar  2 12:34:53 AM EST 2025
+CPU Usage:
+12:34:53 AM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+12:34:54 AM  all    0.77    0.12    1.31    0.00    0.00    0.02    0.00    0.00    0.00   97.79
+Memory Usage:
+               total        used        free      shared  buff/cache   available
+Mem:           503Gi        15Gi       476Gi       8.3Gi        11Gi       476Gi
+Swap:          8.0Gi          0B       8.0Gi
+-------------------------
+Timestamp: Sun Mar  2 12:35:54 AM EST 2025
+CPU Usage:
+12:35:54 AM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+12:35:55 AM  all    0.84    0.19    1.22    0.01    0.00    0.02    0.00    0.00    0.00   97.72
+Memory Usage:
+               total        used        free      shared  buff/cache   available
+Mem:           503Gi        15Gi       477Gi       8.1Gi        11Gi       477Gi
+Swap:          8.0Gi          0B       8.0Gi
+-------------------------
+Timestamp: Sun Mar  2 12:36:55 AM EST 2025
+CPU Usage:
+12:36:55 AM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+12:36:56 AM  all    0.75    0.20    1.30    0.01    0.00    0.02    0.00    0.00    0.00   97.72
+Memory Usage:
+               total        used        free      shared  buff/cache   available
+Mem:           503Gi        15Gi       476Gi       8.2Gi        11Gi       476Gi
+Swap:          8.0Gi          0B       8.0Gi
+-------------------------
+Timestamp: Sun Mar  2 12:37:56 AM EST 2025
+CPU Usage:
+12:37:56 AM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+12:37:57 AM  all    0.79    0.14    1.31    0.09    0.00    0.06    0.00    0.00    0.00   97.60
+Memory Usage:
+               total        used        free      shared  buff/cache   available
+Mem:           503Gi        15Gi       476Gi       8.3Gi        11Gi       476Gi
+Swap:          8.0Gi          0B       8.0Gi
+-------------------------
+Timestamp: Sun Mar  2 12:38:57 AM EST 2025
+CPU Usage:
+12:38:57 AM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+12:38:58 AM  all    0.35    0.00    0.53    0.00    0.00    0.09    0.00    0.00    0.00   99.02
+Memory Usage:
+               total        used        free      shared  buff/cache   available
+Mem:           503Gi       5.4Gi       489Gi       5.2Gi       8.2Gi       489Gi
+Swap:          8.0Gi          0B       8.0Gi
+-------------------------
+Timestamp: Sun Mar  2 12:39:58 AM EST 2025
+CPU Usage:
+12:39:58 AM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+12:39:59 AM  all    0.93    0.21    1.32    0.00    0.00    0.02    0.00    0.00    0.00   97.52
+Memory Usage:
+               total        used        free      shared  buff/cache   available
+Mem:           503Gi        15Gi       475Gi       9.3Gi        12Gi       475Gi
+Swap:          8.0Gi          0B       8.0Gi
+-------------------------
+Timestamp: Sun Mar  2 12:40:59 AM EST 2025
+CPU Usage:
+12:40:59 AM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+12:41:00 AM  all    0.95    0.20    1.23    0.00    0.00    0.08    0.00    0.00    0.00   97.54
+Memory Usage:
+               total        used        free      shared  buff/cache   available
+Mem:           503Gi        15Gi       475Gi       9.3Gi        12Gi       475Gi
+Swap:          8.0Gi          0B       8.0Gi
+-------------------------
+Timestamp: Sun Mar  2 12:42:00 AM EST 2025
+CPU Usage:
+12:42:00 AM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+12:42:01 AM  all    0.88    0.18    1.23    0.05    0.00    0.02    0.00    0.00    0.00   97.64
+Memory Usage:
+               total        used        free      shared  buff/cache   available
+Mem:           503Gi        15Gi       475Gi       9.4Gi        12Gi       475Gi
+Swap:          8.0Gi          0B       8.0Gi
+-------------------------
+Timestamp: Sun Mar  2 12:43:01 AM EST 2025
+CPU Usage:
+12:43:01 AM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+12:43:02 AM  all    0.88    0.17    1.29    0.00    0.00    0.02    0.00    0.00    0.00   97.65
+Memory Usage:
+               total        used        free      shared  buff/cache   available
+Mem:           503Gi        15Gi       476Gi       8.8Gi        11Gi       476Gi
+Swap:          8.0Gi          0B       8.0Gi
+-------------------------
+Timestamp: Sun Mar  2 12:44:02 AM EST 2025
+CPU Usage:
+12:44:02 AM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+12:44:03 AM  all    0.88    0.16    1.30    0.00    0.00    0.04    0.00    0.00    0.00   97.62
+Memory Usage:
+               total        used        free      shared  buff/cache   available
+Mem:           503Gi        15Gi       475Gi       9.2Gi        12Gi       475Gi
+Swap:          8.0Gi          0B       8.0Gi
+-------------------------
+Timestamp: Sun Mar  2 12:45:03 AM EST 2025
+CPU Usage:
+12:45:03 AM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+12:45:04 AM  all    0.86    0.22    1.26    0.00    0.00    0.00    0.00    0.00    0.00   97.66
+Memory Usage:
+               total        used        free      shared  buff/cache   available
+Mem:           503Gi        16Gi       475Gi       9.2Gi        12Gi       475Gi
+Swap:          8.0Gi          0B       8.0Gi
+-------------------------
+Timestamp: Sun Mar  2 12:46:04 AM EST 2025
+CPU Usage:
+12:46:04 AM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+12:46:05 AM  all    0.87    0.20    1.23    0.00    0.00    0.04    0.00    0.00    0.00   97.65
+Memory Usage:
+               total        used        free      shared  buff/cache   available
+Mem:           503Gi        16Gi       475Gi       9.2Gi        12Gi       475Gi
+Swap:          8.0Gi          0B       8.0Gi
+-------------------------
+Timestamp: Sun Mar  2 12:47:05 AM EST 2025
+CPU Usage:
+12:47:05 AM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+12:47:06 AM  all    0.91    0.14    1.20    0.07    0.00    0.02    0.00    0.00    0.00   97.66
+Memory Usage:
+               total        used        free      shared  buff/cache   available
+Mem:           503Gi        15Gi       474Gi        10Gi        13Gi       474Gi
+Swap:          8.0Gi          0B       8.0Gi
+-------------------------
+Timestamp: Sun Mar  2 12:48:06 AM EST 2025
+CPU Usage:
+12:48:06 AM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+12:48:07 AM  all    0.82    0.20    1.23    0.02    0.00    0.02    0.00    0.00    0.00   97.70
+Memory Usage:
+               total        used        free      shared  buff/cache   available
+Mem:           503Gi        16Gi       474Gi        10Gi        13Gi       474Gi
+Swap:          8.0Gi          0B       8.0Gi
+-------------------------
+Timestamp: Sun Mar  2 12:49:07 AM EST 2025
+CPU Usage:
+12:49:07 AM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+12:49:08 AM  all    0.96    0.16    1.30    0.00    0.00    0.02    0.00    0.00    0.00   97.55
+Memory Usage:
+               total        used        free      shared  buff/cache   available
+Mem:           503Gi        15Gi       474Gi        10Gi        13Gi       474Gi
+Swap:          8.0Gi          0B       8.0Gi
+-------------------------
+Timestamp: Sun Mar  2 12:50:08 AM EST 2025
+CPU Usage:
+12:50:08 AM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+12:50:09 AM  all    1.68    0.26   26.03    0.05    0.00    0.07    0.00    0.00    0.00   71.91
+Memory Usage:
+               total        used        free      shared  buff/cache   available
+Mem:           503Gi        11Gi       478Gi        10Gi        13Gi       478Gi
+Swap:          8.0Gi          0B       8.0Gi
+-------------------------
+Timestamp: Sun Mar  2 12:51:09 AM EST 2025
+CPU Usage:
+12:51:09 AM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+12:51:10 AM  all    0.93    0.18    1.27    0.02    0.00    0.13    0.00    0.00    0.00   97.48
+Memory Usage:
+               total        used        free      shared  buff/cache   available
+Mem:           503Gi        15Gi       474Gi         9Gi        13Gi       474Gi
+Swap:          8.0Gi          0B       8.0Gi
+-------------------------
+Timestamp: Sun Mar  2 12:52:10 AM EST 2025
+CPU Usage:
+12:52:10 AM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+12:52:11 AM  all    0.95    0.14    1.20    0.00    0.00    0.01    0.00    0.00    0.00   97.70
+Memory Usage:
+               total        used        free      shared  buff/cache   available
+Mem:           503Gi        16Gi       473Gi        10Gi        13Gi       473Gi
+Swap:          8.0Gi          0B       8.0Gi
+-------------------------
+Timestamp: Sun Mar  2 12:53:11 AM EST 2025
+CPU Usage:
+12:53:11 AM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+12:53:12 AM  all    0.90    0.18    1.30    0.00    0.00    0.03    0.00    0.00    0.00   97.58
+Memory Usage:
+               total        used        free      shared  buff/cache   available
+Mem:           503Gi        16Gi       473Gi        10Gi        13Gi       473Gi
+Swap:          8.0Gi          0B       8.0Gi
+-------------------------
+Timestamp: Sun Mar  2 12:54:12 AM EST 2025
+CPU Usage:
+12:54:12 AM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+12:54:13 AM  all    0.20    0.12    0.26    0.00    0.00    0.01    0.00    0.00    0.00   99.41
+Memory Usage:
+               total        used        free      shared  buff/cache   available
+Mem:           503Gi        16Gi       473Gi        10Gi        13Gi       474Gi
+Swap:          8.0Gi          0B       8.0Gi
+-------------------------
+Timestamp: Sun Mar  2 12:55:13 AM EST 2025
+CPU Usage:
+12:55:13 AM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+12:55:14 AM  all    0.13    0.05    0.30    0.00    0.00    0.05    0.00    0.00    0.00   99.47
+Memory Usage:
+               total        used        free      shared  buff/cache   available
+Mem:           503Gi        16Gi       474Gi        10Gi        13Gi       474Gi
+Swap:          8.0Gi          0B       8.0Gi
+-------------------------
+Timestamp: Sun Mar  2 12:56:14 AM EST 2025
+CPU Usage:
+12:56:14 AM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+12:56:15 AM  all    0.23    0.08    0.24    0.00    0.00    0.05    0.00    0.00    0.00   99.40
+Memory Usage:
+               total        used        free      shared  buff/cache   available
+Mem:           503Gi        16Gi       474Gi        10Gi        13Gi       474Gi
+Swap:          8.0Gi          0B       8.0Gi
+-------------------------
+Timestamp: Sun Mar  2 12:57:15 AM EST 2025
+CPU Usage:
+12:57:15 AM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+12:57:16 AM  all    0.21    0.11    0.31    0.00    0.00    0.04    0.00    0.00    0.00   99.33
+Memory Usage:
+               total        used        free      shared  buff/cache   available
+Mem:           503Gi        15Gi       474Gi        10Gi        13Gi       474Gi
+Swap:          8.0Gi          0B       8.0Gi
+-------------------------
+Timestamp: Sun Mar  2 12:58:16 AM EST 2025
+CPU Usage:
+12:58:16 AM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+12:58:17 AM  all    0.32    0.12    0.29    0.00    0.00    0.03    0.00    0.00    0.00   99.24
+Memory Usage:
+               total        used        free      shared  buff/cache   available
+Mem:           503Gi        15Gi       474Gi        10Gi        13Gi       474Gi
+Swap:          8.0Gi          0B       8.0Gi
+-------------------------
+Timestamp: Sun Mar  2 12:59:17 AM EST 2025
+CPU Usage:
+12:59:17 AM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+12:59:18 AM  all    0.17    0.09    0.27    0.00    0.00    0.06    0.00    0.00    0.00   99.40
+Memory Usage:
+               total        used        free      shared  buff/cache   available
+Mem:           503Gi        15Gi       474Gi        10Gi        13Gi       474Gi
+Swap:          8.0Gi          0B       8.0Gi
+-------------------------
+Timestamp: Sun Mar  2 01:00:18 AM EST 2025
+CPU Usage:
+01:00:18 AM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+01:00:19 AM  all    0.21    0.09    0.26    0.00    0.00    0.02    0.00    0.00    0.00   99.42
+Memory Usage:
+               total        used        free      shared  buff/cache   available
+Mem:           503Gi        15Gi       474Gi        10Gi        13Gi       474Gi
+Swap:          8.0Gi          0B       8.0Gi
+-------------------------
+Timestamp: Sun Mar  2 01:01:19 AM EST 2025
+CPU Usage:
+01:01:19 AM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+01:01:20 AM  all    0.13    0.09    0.27    0.16    0.00    0.05    0.00    0.00    0.00   99.31
+Memory Usage:
+               total        used        free      shared  buff/cache   available
+Mem:           503Gi        15Gi       474Gi        10Gi        13Gi       474Gi
+Swap:          8.0Gi          0B       8.0Gi
+-------------------------
+Timestamp: Sun Mar  2 01:02:20 AM EST 2025
+CPU Usage:
+01:02:20 AM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+01:02:21 AM  all    2.29    0.95    0.98    0.00    0.00    0.06    0.00    0.00    0.00   95.71
+Memory Usage:
+               total        used        free      shared  buff/cache   available
+Mem:           503Gi        15Gi       479Gi       5.3Gi       8.4Gi       480Gi
+Swap:          8.0Gi          0B       8.0Gi
+-------------------------
+Timestamp: Sun Mar  2 01:03:21 AM EST 2025
+CPU Usage:
+01:03:21 AM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+01:03:22 AM  all    2.03    1.12    1.26    0.02    0.00    0.09    0.00    0.00    0.00   95.49
+Memory Usage:
+               total        used        free      shared  buff/cache   available
+Mem:           503Gi        15Gi       479Gi       5.4Gi       8.5Gi       479Gi
+Swap:          8.0Gi          0B       8.0Gi
+-------------------------
+Timestamp: Sun Mar  2 01:04:22 AM EST 2025
+CPU Usage:
+01:04:22 AM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+01:04:23 AM  all    1.80    1.04    1.06    0.02    0.00    0.09    0.00    0.00    0.00   95.98
+Memory Usage:
+               total        used        free      shared  buff/cache   available
+Mem:           503Gi        17Gi       477Gi       5.4Gi       8.6Gi       478Gi
+Swap:          8.0Gi          0B       8.0Gi
+-------------------------
+Timestamp: Sun Mar  2 01:05:23 AM EST 2025
+CPU Usage:
+01:05:23 AM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+01:05:24 AM  all    1.37    0.34    0.64    0.00    0.00    0.02    0.00    0.00    0.00   97.64
+Memory Usage:
+               total        used        free      shared  buff/cache   available
+Mem:           503Gi        14Gi       478Gi       7.2Gi        10Gi       478Gi
+Swap:          8.0Gi          0B       8.0Gi
+-------------------------
+Timestamp: Sun Mar  2 01:06:24 AM EST 2025
+CPU Usage:
+01:06:24 AM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+01:06:25 AM  all    1.48    0.31    0.61    0.08    0.00    0.05    0.00    0.00    0.00   97.46
+Memory Usage:
+               total        used        free      shared  buff/cache   available
+Mem:           503Gi        14Gi       478Gi       7.1Gi        10Gi       478Gi
+Swap:          8.0Gi          0B       8.0Gi
+-------------------------
+Timestamp: Sun Mar  2 01:07:25 AM EST 2025
+CPU Usage:
+01:07:25 AM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+01:07:26 AM  all    1.26    0.21    0.60    0.00    0.00    0.03    0.00    0.00    0.00   97.90
+Memory Usage:
+               total        used        free      shared  buff/cache   available
+Mem:           503Gi        15Gi       476Gi       9.1Gi        12Gi       476Gi
+Swap:          8.0Gi          0B       8.0Gi
+-------------------------
+Timestamp: Sun Mar  2 01:08:26 AM EST 2025
+CPU Usage:
+01:08:26 AM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+01:08:27 AM  all    1.34    0.27    0.53    0.00    0.00    0.03    0.00    0.00    0.00   97.82
+Memory Usage:
+               total        used        free      shared  buff/cache   available
+Mem:           503Gi        14Gi       476Gi       8.9Gi        12Gi       476Gi
+Swap:          8.0Gi          0B       8.0Gi
+-------------------------
+Timestamp: Sun Mar  2 01:09:27 AM EST 2025
+CPU Usage:
+01:09:28 AM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+01:09:29 AM  all    1.27    0.21    0.49    0.00    0.00    0.05    0.00    0.00    0.00   97.98
+Memory Usage:
+               total        used        free      shared  buff/cache   available
+Mem:           503Gi        15Gi       476Gi       8.9Gi        12Gi       476Gi
+Swap:          8.0Gi          0B       8.0Gi
+-------------------------
+Timestamp: Sun Mar  2 01:10:29 AM EST 2025
+CPU Usage:
+01:10:29 AM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+01:10:30 AM  all    0.73    0.18    1.28    0.00    0.00    0.03    0.00    0.00    0.00   97.77
+Memory Usage:
+               total        used        free      shared  buff/cache   available
+Mem:           503Gi        15Gi       476Gi       8.2Gi        11Gi       476Gi
+Swap:          8.0Gi          0B       8.0Gi
+-------------------------
+Timestamp: Sun Mar  2 01:11:30 AM EST 2025
+CPU Usage:
+01:11:30 AM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+01:11:31 AM  all    0.68    0.15    1.38    0.09    0.00    0.02    0.00    0.00    0.00   97.68
+Memory Usage:
+               total        used        free      shared  buff/cache   available
+Mem:           503Gi        15Gi       476Gi       8.3Gi        11Gi       476Gi
+Swap:          8.0Gi          0B       8.0Gi
+-------------------------
+Timestamp: Sun Mar  2 01:12:31 AM EST 2025
+CPU Usage:
+01:12:31 AM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+01:12:32 AM  all    0.68    0.17    1.33    0.00    0.00    0.02    0.00    0.00    0.00   97.81
+Memory Usage:
+               total        used        free      shared  buff/cache   available
+Mem:           503Gi        15Gi       476Gi       8.3Gi        11Gi       476Gi
+Swap:          8.0Gi          0B       8.0Gi
+-------------------------
+Timestamp: Sun Mar  2 01:13:32 AM EST 2025
+CPU Usage:
+01:13:32 AM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+01:13:33 AM  all    0.72    0.15    1.35    0.00    0.00    0.04    0.00    0.00    0.00   97.75
+Memory Usage:
+               total        used        free      shared  buff/cache   available
+Mem:           503Gi        14Gi       477Gi       8.0Gi        11Gi       477Gi
+Swap:          8.0Gi          0B       8.0Gi
+-------------------------
+Timestamp: Sun Mar  2 01:14:33 AM EST 2025
+CPU Usage:
+01:14:33 AM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+01:14:34 AM  all    0.85    0.13    1.10    0.00    0.00    0.02    0.00    0.00    0.00   97.89
+Memory Usage:
+               total        used        free      shared  buff/cache   available
+Mem:           503Gi        15Gi       476Gi       8.2Gi        11Gi       476Gi
+Swap:          8.0Gi          0B       8.0Gi
+-------------------------
+Timestamp: Sun Mar  2 01:15:34 AM EST 2025
+CPU Usage:
+01:15:34 AM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+01:15:35 AM  all    0.78    0.19    1.23    0.00    0.00    0.05    0.00    0.00    0.00   97.76
+Memory Usage:
+               total        used        free      shared  buff/cache   available
+Mem:           503Gi        15Gi       476Gi       8.2Gi        11Gi       476Gi
+Swap:          8.0Gi          0B       8.0Gi
+-------------------------
+Timestamp: Sun Mar  2 01:16:35 AM EST 2025
+CPU Usage:
+01:16:35 AM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+01:16:36 AM  all    0.79    0.20    1.34    0.03    0.00    0.04    0.00    0.00    0.00   97.60
+Memory Usage:
+               total        used        free      shared  buff/cache   available
+Mem:           503Gi        15Gi       476Gi       8.3Gi        11Gi       476Gi
+Swap:          8.0Gi          0B       8.0Gi
+-------------------------
+Timestamp: Sun Mar  2 01:17:36 AM EST 2025
+CPU Usage:
+01:17:36 AM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+01:17:37 AM  all    0.92    0.13    1.35    0.03    0.00    0.03    0.00    0.00    0.00   97.54
+Memory Usage:
+               total        used        free      shared  buff/cache   available
+Mem:           503Gi        15Gi       475Gi       9.1Gi        12Gi       475Gi
+Swap:          8.0Gi          0B       8.0Gi
+-------------------------
+Timestamp: Sun Mar  2 01:18:37 AM EST 2025
+CPU Usage:
+01:18:37 AM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+01:18:38 AM  all    0.68    0.17    1.30    0.00    0.00    0.03    0.00    0.00    0.00   97.82
+Memory Usage:
+               total        used        free      shared  buff/cache   available
+Mem:           503Gi        15Gi       475Gi       9.2Gi        12Gi       475Gi
+Swap:          8.0Gi          0B       8.0Gi
+-------------------------
+Timestamp: Sun Mar  2 01:19:38 AM EST 2025
+CPU Usage:
+01:19:38 AM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+01:19:39 AM  all    0.98    0.14    1.23    0.00    0.00    0.04    0.00    0.00    0.00   97.60
+Memory Usage:
+               total        used        free      shared  buff/cache   available
+Mem:           503Gi        15Gi       474Gi       9.4Gi        12Gi       475Gi
+Swap:          8.0Gi          0B       8.0Gi
+-------------------------
+Timestamp: Sun Mar  2 01:20:39 AM EST 2025
+CPU Usage:
+01:20:39 AM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+01:20:40 AM  all    0.07    0.00    0.30    0.00    0.00    0.00    0.00    0.00    0.00   99.63
+Memory Usage:
+               total        used        free      shared  buff/cache   available
+Mem:           503Gi       5.4Gi       489Gi       5.2Gi       8.4Gi       489Gi
+Swap:          8.0Gi          0B       8.0Gi
+-------------------------
+Timestamp: Sun Mar  2 01:21:40 AM EST 2025
+CPU Usage:
+01:21:40 AM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+01:21:41 AM  all    0.85    0.17    1.26    0.00    0.00    0.02    0.00    0.00    0.00   97.70
+Memory Usage:
+               total        used        free      shared  buff/cache   available
+Mem:           503Gi        15Gi       475Gi       9.2Gi        12Gi       475Gi
+Swap:          8.0Gi          0B       8.0Gi
+-------------------------
+Timestamp: Sun Mar  2 01:22:41 AM EST 2025
+CPU Usage:
+01:22:41 AM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+01:22:42 AM  all    0.76    0.16    1.16    0.00    0.00    0.02    0.00    0.00    0.00   97.90
+Memory Usage:
+               total        used        free      shared  buff/cache   available
+Mem:           503Gi        16Gi       474Gi       9.2Gi        12Gi       475Gi
+Swap:          8.0Gi          0B       8.0Gi
+-------------------------
