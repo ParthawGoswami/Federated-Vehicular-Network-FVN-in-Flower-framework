@@ -1,0 +1,59 @@
+[2025-03-12 22:26:50,164][flwr][INFO] -  ***********  Starting Experiment: resnet18-cifar10-faulty_clients[['0']]-noise_rate1-TClients10--clientsPerR10)-non_iid-batch256-epochs3-lr0.001 ***************
+[2025-03-12 22:26:54,719][flwr][INFO] - ** All Malicious Clients are: ['0'] **
+[2025-03-12 22:26:55,438][flwr][WARNING] - DEPRECATED FEATURE: `client_fn` now expects a signature `def client_fn(context: Context)`.The provided `client_fn` has signature: {'cid': <Parameter "cid">}. You can import the `Context` like this: `from flwr.common import Context`
+
+            This is a deprecated feature. It will be removed
+            entirely in future versions of Flower.
+        
+[2025-03-12 22:26:55,438][flwr][WARNING] - DEPRECATED FEATURE: Passing either `server`, `config`, `strategy` or `client_manager` directly to the ServerApp constructor is deprecated.
+
+            Check the following `FEATURE UPDATE` warning message for the preferred
+            new mechanism to use this feature in Flower.
+        
+[2025-03-12 22:26:55,438][flwr][WARNING] - FEATURE UPDATE: Pass `ServerApp` arguments wrapped in a `flwr.server.ServerAppComponents` object that gets returned by a function passed as the `server_fn` argument to the `ServerApp` constructor. For example: 
+        ------------------------------------------------------------
+        
+
+        def server_fn(context: Context):
+            server_config = ServerConfig(num_rounds=3)
+            strategy = FedAvg()
+            return ServerAppComponents(
+                strategy=strategy,
+                server_config=server_config,
+        )
+
+        app = ServerApp(server_fn=server_fn)
+
+        ------------------------------------------------------------
+        
+[2025-03-12 22:26:55,442][flwr][INFO] - Starting Flower ServerApp, config: num_rounds=5, no round_timeout
+[2025-03-12 22:26:55,447][flwr][INFO] - 
+[2025-03-12 22:26:55,452][flwr][INFO] - [INIT]
+[2025-03-12 22:26:55,453][flwr][INFO] - Using initial global parameters provided by strategy
+[2025-03-12 22:26:55,456][flwr][INFO] - Starting evaluation of initial global parameters
+[2025-03-12 22:27:08,508][flwr][INFO] - initial parameters (loss, other metrics): 0.00471433527469635, {'accuracy': 0.1049, 'loss': 0.00471433527469635, 'round': 0}
+[2025-03-12 22:27:08,509][flwr][INFO] - 
+[2025-03-12 22:27:08,509][flwr][INFO] - [ROUND 1]
+[2025-03-12 22:27:08,512][flwr][INFO] - configure_fit: strategy sampled 10 clients (out of 10)
+[2025-03-12 22:30:31,311][flwr][INFO] - aggregate_fit: received 10 results and 0 failures
+[2025-03-12 22:30:41,554][flwr][INFO] - >>   ------------------- Clients Metrics ------------- 
+[2025-03-12 22:30:41,555][flwr][INFO] -  Client 0, Loss Train 0.008890299144487093, Accuracy Train 0.15616127200454288, data_points = 21
+[2025-03-12 22:30:41,555][flwr][INFO] -  Client 1, Loss Train 0.001716625304404606, Accuracy Train 0.8553483807654564, data_points = 20
+[2025-03-12 22:30:41,555][flwr][INFO] -  Client 2, Loss Train 0.0017642686354805907, Accuracy Train 0.847109883606234, data_points = 20
+[2025-03-12 22:30:41,555][flwr][INFO] -  Client 3, Loss Train 0.0026915828277244702, Accuracy Train 0.7897044494965898, data_points = 25
+[2025-03-12 22:30:41,555][flwr][INFO] -  Client 4, Loss Train 0.0015111455760342624, Accuracy Train 0.871662914120296, data_points = 25
+[2025-03-12 22:30:41,555][flwr][INFO] -  Client 5, Loss Train 0.0015392459483597766, Accuracy Train 0.8752176436448056, data_points = 14
+[2025-03-12 22:30:41,555][flwr][INFO] -  Client 6, Loss Train 0.001727085262748968, Accuracy Train 0.8588904694167852, data_points = 14
+[2025-03-12 22:30:41,555][flwr][INFO] -  Client 7, Loss Train 0.0016856640296586043, Accuracy Train 0.8532403918613414, data_points = 21
+[2025-03-12 22:30:41,556][flwr][INFO] -  Client 8, Loss Train 0.001128533983247246, Accuracy Train 0.9083129584352079, data_points = 23
+[2025-03-12 22:30:41,556][flwr][INFO] -  Client 9, Loss Train 0.0018014341150956084, Accuracy Train 0.8517455762792921, data_points = 17
+[2025-03-12 22:30:41,556][flwr][INFO] - ***FedDebug Output Round 1 ***
+[2025-03-12 22:30:41,556][flwr][INFO] - True Malicious Clients (Ground Truth) = ['0']
+[2025-03-12 22:30:41,557][flwr][INFO] - Total Random Inputs = 10
+[2025-03-12 22:30:41,557][flwr][INFO] - Predicted Malicious Clients = {'0': 1.0}
+[2025-03-12 22:30:41,557][flwr][INFO] - FedDebug Localization Accuracy = 100.0
+[2025-03-12 22:30:51,748][flwr][INFO] - fit progress: (1, 0.0033666104316711428, {'accuracy': 0.401, 'loss': 0.0033666104316711428, 'round': 1}, 223.23897647298872)
+[2025-03-12 22:30:51,749][flwr][INFO] - configure_evaluate: no clients selected, skipping evaluation
+[2025-03-12 22:30:51,749][flwr][INFO] - 
+[2025-03-12 22:30:51,750][flwr][INFO] - [ROUND 2]
+[2025-03-12 22:30:51,751][flwr][INFO] - configure_fit: strategy sampled 10 clients (out of 10)

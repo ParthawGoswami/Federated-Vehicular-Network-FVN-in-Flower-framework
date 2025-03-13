@@ -1,0 +1,1 @@
+[2025-03-13 02:20:27,976][flwr][INFO] -  ***********  Starting Experiment: resnet18-mnist-faulty_clients[['0']]-noise_rate0.2-TClients10--clientsPerR10)-non_iid-batch256-epochs3-lr0.001 ***************

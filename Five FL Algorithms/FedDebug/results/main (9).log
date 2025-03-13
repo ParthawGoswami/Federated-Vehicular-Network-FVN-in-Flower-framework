@@ -1,0 +1,37 @@
+[2025-03-12 19:16:48,653][flwr][INFO] -  ***********  Starting Experiment: lenet-cifar10-faulty_clients[['0']]-noise_rate1-TClients10--clientsPerR10)-iid-batch256-epochs3-lr0.001 ***************
+[2025-03-12 19:16:51,708][flwr][INFO] - ** All Malicious Clients are: ['0'] **
+[2025-03-12 19:16:51,740][flwr][WARNING] - DEPRECATED FEATURE: `client_fn` now expects a signature `def client_fn(context: Context)`.The provided `client_fn` has signature: {'cid': <Parameter "cid">}. You can import the `Context` like this: `from flwr.common import Context`
+
+            This is a deprecated feature. It will be removed
+            entirely in future versions of Flower.
+        
+[2025-03-12 19:16:51,741][flwr][WARNING] - DEPRECATED FEATURE: Passing either `server`, `config`, `strategy` or `client_manager` directly to the ServerApp constructor is deprecated.
+
+            Check the following `FEATURE UPDATE` warning message for the preferred
+            new mechanism to use this feature in Flower.
+        
+[2025-03-12 19:16:51,742][flwr][WARNING] - FEATURE UPDATE: Pass `ServerApp` arguments wrapped in a `flwr.server.ServerAppComponents` object that gets returned by a function passed as the `server_fn` argument to the `ServerApp` constructor. For example: 
+        ------------------------------------------------------------
+        
+
+        def server_fn(context: Context):
+            server_config = ServerConfig(num_rounds=3)
+            strategy = FedAvg()
+            return ServerAppComponents(
+                strategy=strategy,
+                server_config=server_config,
+        )
+
+        app = ServerApp(server_fn=server_fn)
+
+        ------------------------------------------------------------
+        
+[2025-03-12 19:16:51,750][flwr][INFO] - Starting Flower ServerApp, config: num_rounds=5, no round_timeout
+[2025-03-12 19:16:51,753][flwr][INFO] - 
+[2025-03-12 19:16:51,757][flwr][INFO] - [INIT]
+[2025-03-12 19:16:51,759][flwr][INFO] - Using initial global parameters provided by strategy
+[2025-03-12 19:16:51,759][flwr][INFO] - Starting evaluation of initial global parameters
+[2025-03-12 19:17:01,950][flwr][INFO] - initial parameters (loss, other metrics): 0.004609923124313355, {'accuracy': 0.1166, 'loss': 0.004609923124313355, 'round': 0}
+[2025-03-12 19:17:01,950][flwr][INFO] - 
+[2025-03-12 19:17:01,951][flwr][INFO] - [ROUND 1]
+[2025-03-12 19:17:01,952][flwr][INFO] - configure_fit: strategy sampled 10 clients (out of 10)

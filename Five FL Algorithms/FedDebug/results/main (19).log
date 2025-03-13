@@ -1,0 +1,74 @@
+[2025-03-12 22:59:20,533][flwr][INFO] -  ***********  Starting Experiment: densenet121-mnist-faulty_clients[['0']]-noise_rate1-TClients10--clientsPerR10)-iid-batch256-epochs3-lr0.001 ***************
+[2025-03-12 22:59:23,492][flwr][INFO] - ** All Malicious Clients are: ['0'] **
+[2025-03-12 22:59:24,259][flwr][WARNING] - DEPRECATED FEATURE: `client_fn` now expects a signature `def client_fn(context: Context)`.The provided `client_fn` has signature: {'cid': <Parameter "cid">}. You can import the `Context` like this: `from flwr.common import Context`
+
+            This is a deprecated feature. It will be removed
+            entirely in future versions of Flower.
+        
+[2025-03-12 22:59:24,259][flwr][WARNING] - DEPRECATED FEATURE: Passing either `server`, `config`, `strategy` or `client_manager` directly to the ServerApp constructor is deprecated.
+
+            Check the following `FEATURE UPDATE` warning message for the preferred
+            new mechanism to use this feature in Flower.
+        
+[2025-03-12 22:59:24,259][flwr][WARNING] - FEATURE UPDATE: Pass `ServerApp` arguments wrapped in a `flwr.server.ServerAppComponents` object that gets returned by a function passed as the `server_fn` argument to the `ServerApp` constructor. For example: 
+        ------------------------------------------------------------
+        
+
+        def server_fn(context: Context):
+            server_config = ServerConfig(num_rounds=3)
+            strategy = FedAvg()
+            return ServerAppComponents(
+                strategy=strategy,
+                server_config=server_config,
+        )
+
+        app = ServerApp(server_fn=server_fn)
+
+        ------------------------------------------------------------
+        
+[2025-03-12 22:59:24,264][flwr][INFO] - Starting Flower ServerApp, config: num_rounds=1, no round_timeout
+[2025-03-12 22:59:24,271][flwr][INFO] - 
+[2025-03-12 22:59:24,275][flwr][INFO] - [INIT]
+[2025-03-12 22:59:24,276][flwr][INFO] - Using initial global parameters provided by strategy
+[2025-03-12 22:59:24,277][flwr][INFO] - Starting evaluation of initial global parameters
+[2025-03-12 22:59:42,076][flwr][INFO] - initial parameters (loss, other metrics): 0.004649860072135925, {'accuracy': 0.1362, 'loss': 0.004649860072135925, 'round': 0}
+[2025-03-12 22:59:42,076][flwr][INFO] - 
+[2025-03-12 22:59:42,077][flwr][INFO] - [ROUND 1]
+[2025-03-12 22:59:42,078][flwr][INFO] - configure_fit: strategy sampled 10 clients (out of 10)
+[2025-03-12 23:09:37,190][flwr][INFO] - aggregate_fit: received 10 results and 0 failures
+[2025-03-12 23:09:58,612][flwr][INFO] - >>   ------------------- Clients Metrics ------------- 
+[2025-03-12 23:09:58,613][flwr][INFO] -  Client 0, Loss Train 0.009196542700131734, Accuracy Train 0.12366666666666666, data_points = 24
+[2025-03-12 23:09:58,613][flwr][INFO] -  Client 1, Loss Train 0.0002630192094172041, Accuracy Train 0.9793333333333333, data_points = 24
+[2025-03-12 23:09:58,613][flwr][INFO] -  Client 2, Loss Train 0.0003087246958166361, Accuracy Train 0.9768333333333333, data_points = 24
+[2025-03-12 23:09:58,613][flwr][INFO] -  Client 3, Loss Train 0.000289069081346194, Accuracy Train 0.9791666666666666, data_points = 24
+[2025-03-12 23:09:58,613][flwr][INFO] -  Client 4, Loss Train 0.00036150724813342094, Accuracy Train 0.9715, data_points = 24
+[2025-03-12 23:09:58,614][flwr][INFO] -  Client 5, Loss Train 0.00025845408563812574, Accuracy Train 0.9816666666666667, data_points = 24
+[2025-03-12 23:09:58,614][flwr][INFO] -  Client 6, Loss Train 0.00031366478527585667, Accuracy Train 0.9751666666666666, data_points = 24
+[2025-03-12 23:09:58,614][flwr][INFO] -  Client 7, Loss Train 0.00030241354430715243, Accuracy Train 0.9763333333333334, data_points = 24
+[2025-03-12 23:09:58,614][flwr][INFO] -  Client 8, Loss Train 0.0003173046366622051, Accuracy Train 0.977, data_points = 24
+[2025-03-12 23:09:58,614][flwr][INFO] -  Client 9, Loss Train 0.0002729558084780971, Accuracy Train 0.9788333333333333, data_points = 24
+[2025-03-12 23:09:58,615][flwr][INFO] - ***FedDebug Output Round 1 ***
+[2025-03-12 23:09:58,615][flwr][INFO] - True Malicious Clients (Ground Truth) = ['0']
+[2025-03-12 23:09:58,616][flwr][INFO] - Total Random Inputs = 10
+[2025-03-12 23:09:58,616][flwr][INFO] - Predicted Malicious Clients = {'1': 0.4, '6': 0.3, '3': 0.3}
+[2025-03-12 23:09:58,616][flwr][INFO] - FedDebug Localization Accuracy = 0.0
+[2025-03-12 23:10:13,792][flwr][INFO] - fit progress: (1, 0.0040542405128479, {'accuracy': 0.3656, 'loss': 0.0040542405128479, 'round': 1}, 631.7151994329179)
+[2025-03-12 23:10:13,792][flwr][INFO] - configure_evaluate: no clients selected, skipping evaluation
+[2025-03-12 23:10:13,797][flwr][INFO] - 
+[2025-03-12 23:10:13,797][flwr][INFO] - [SUMMARY]
+[2025-03-12 23:10:13,797][flwr][INFO] - Run finished 1 round(s) in 631.72s
+[2025-03-12 23:10:13,798][flwr][INFO] - 	History (loss, centralized):
+[2025-03-12 23:10:13,798][flwr][INFO] - 		round 0: 0.004649860072135925
+[2025-03-12 23:10:13,799][flwr][INFO] - 		round 1: 0.0040542405128479
+[2025-03-12 23:10:13,799][flwr][INFO] - 	History (metrics, distributed, fit):
+[2025-03-12 23:10:13,799][flwr][INFO] - 	{'accuracy': [(1, 0.0)],
+[2025-03-12 23:10:13,799][flwr][INFO] - 	 'loss': [(1, 0.0)],
+[2025-03-12 23:10:13,799][flwr][INFO] - 	 'potential_malicious_clients': [(1, {'1': 4, '3': 3, '6': 3})]}
+[2025-03-12 23:10:13,799][flwr][INFO] - 	History (metrics, centralized):
+[2025-03-12 23:10:13,799][flwr][INFO] - 	{'accuracy': [(0, 0.1362), (1, 0.3656)],
+[2025-03-12 23:10:13,799][flwr][INFO] - 	 'loss': [(0, 0.004649860072135925), (1, 0.0040542405128479)],
+[2025-03-12 23:10:13,800][flwr][INFO] - 	 'round': [(0, 0), (1, 1)]}
+[2025-03-12 23:10:13,800][flwr][INFO] - 
+[2025-03-12 23:10:16,941][flwr][INFO] - Saved plot at /users/Parthaw/flower/baselines/feddebug/outputs/2025-03-12/22-59-20/iid-densenet121-mnist.png
+[2025-03-12 23:10:16,942][flwr][INFO] - Training Complete for Experiment: densenet121-mnist-faulty_clients[['0']]-noise_rate1-TClients10--clientsPerR10)-iid-batch256-epochs3-lr0.001
+[2025-03-12 23:10:16,947][flwr][INFO] - Total Time Taken: 656.4171612262726 seconds

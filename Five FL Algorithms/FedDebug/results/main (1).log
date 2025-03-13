@@ -1,0 +1,2 @@
+[2025-03-12 02:04:24,130][flwr][INFO] -  ***********  Starting Experiment: SimpleCNN-mnist-faulty_clients[['0']]-noise_rate1-TClients10--clientsPerR10)-non_iid-batch256-epochs3-lr0.001 ***************
+[2025-03-12 02:04:31,766][flwr][INFO] - ** All Malicious Clients are: ['0'] **

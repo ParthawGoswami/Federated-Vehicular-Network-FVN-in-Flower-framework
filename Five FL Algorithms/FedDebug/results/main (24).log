@@ -1,0 +1,114 @@
+[2025-03-13 00:45:09,638][flwr][INFO] -  ***********  Starting Experiment: lenet-cifar10-faulty_clients[['0', '1']]-noise_rate1-TClients50--clientsPerR50)-iid-batch256-epochs3-lr0.001 ***************
+[2025-03-13 00:45:14,886][flwr][INFO] - ** All Malicious Clients are: ['0', '1'] **
+[2025-03-13 00:45:14,922][flwr][WARNING] - DEPRECATED FEATURE: `client_fn` now expects a signature `def client_fn(context: Context)`.The provided `client_fn` has signature: {'cid': <Parameter "cid">}. You can import the `Context` like this: `from flwr.common import Context`
+
+            This is a deprecated feature. It will be removed
+            entirely in future versions of Flower.
+        
+[2025-03-13 00:45:14,922][flwr][WARNING] - DEPRECATED FEATURE: Passing either `server`, `config`, `strategy` or `client_manager` directly to the ServerApp constructor is deprecated.
+
+            Check the following `FEATURE UPDATE` warning message for the preferred
+            new mechanism to use this feature in Flower.
+        
+[2025-03-13 00:45:14,923][flwr][WARNING] - FEATURE UPDATE: Pass `ServerApp` arguments wrapped in a `flwr.server.ServerAppComponents` object that gets returned by a function passed as the `server_fn` argument to the `ServerApp` constructor. For example: 
+        ------------------------------------------------------------
+        
+
+        def server_fn(context: Context):
+            server_config = ServerConfig(num_rounds=3)
+            strategy = FedAvg()
+            return ServerAppComponents(
+                strategy=strategy,
+                server_config=server_config,
+        )
+
+        app = ServerApp(server_fn=server_fn)
+
+        ------------------------------------------------------------
+        
+[2025-03-13 00:45:14,927][flwr][INFO] - Starting Flower ServerApp, config: num_rounds=1, no round_timeout
+[2025-03-13 00:45:14,927][flwr][INFO] - 
+[2025-03-13 00:45:14,936][flwr][INFO] - [INIT]
+[2025-03-13 00:45:14,937][flwr][INFO] - Using initial global parameters provided by strategy
+[2025-03-13 00:45:14,939][flwr][INFO] - Starting evaluation of initial global parameters
+[2025-03-13 00:45:24,165][flwr][INFO] - initial parameters (loss, other metrics): 0.004609923124313355, {'accuracy': 0.1166, 'loss': 0.004609923124313355, 'round': 0}
+[2025-03-13 00:45:24,166][flwr][INFO] - 
+[2025-03-13 00:45:24,166][flwr][INFO] - [ROUND 1]
+[2025-03-13 00:45:24,167][flwr][INFO] - configure_fit: strategy sampled 50 clients (out of 50)
+[2025-03-13 00:46:17,583][flwr][INFO] - aggregate_fit: received 50 results and 0 failures
+[2025-03-13 00:46:20,054][flwr][INFO] - >>   ------------------- Clients Metrics ------------- 
+[2025-03-13 00:46:20,055][flwr][INFO] -  Client 0, Loss Train 0.009190680980682374, Accuracy Train 0.116, data_points = 4
+[2025-03-13 00:46:20,055][flwr][INFO] -  Client 1, Loss Train 0.009178386211395264, Accuracy Train 0.125, data_points = 4
+[2025-03-13 00:46:20,055][flwr][INFO] -  Client 2, Loss Train 0.009001352548599243, Accuracy Train 0.202, data_points = 4
+[2025-03-13 00:46:20,055][flwr][INFO] -  Client 3, Loss Train 0.008982859134674072, Accuracy Train 0.147, data_points = 4
+[2025-03-13 00:46:20,055][flwr][INFO] -  Client 4, Loss Train 0.009093578815460204, Accuracy Train 0.132, data_points = 4
+[2025-03-13 00:46:20,056][flwr][INFO] -  Client 5, Loss Train 0.009037631511688233, Accuracy Train 0.132, data_points = 4
+[2025-03-13 00:46:20,056][flwr][INFO] -  Client 6, Loss Train 0.009048495531082154, Accuracy Train 0.192, data_points = 4
+[2025-03-13 00:46:20,056][flwr][INFO] -  Client 7, Loss Train 0.009034416675567626, Accuracy Train 0.15, data_points = 4
+[2025-03-13 00:46:20,056][flwr][INFO] -  Client 8, Loss Train 0.009073797941207886, Accuracy Train 0.115, data_points = 4
+[2025-03-13 00:46:20,056][flwr][INFO] -  Client 9, Loss Train 0.009049183607101441, Accuracy Train 0.198, data_points = 4
+[2025-03-13 00:46:20,056][flwr][INFO] -  Client 10, Loss Train 0.009050593376159669, Accuracy Train 0.187, data_points = 4
+[2025-03-13 00:46:20,056][flwr][INFO] -  Client 11, Loss Train 0.009067015647888184, Accuracy Train 0.174, data_points = 4
+[2025-03-13 00:46:20,056][flwr][INFO] -  Client 12, Loss Train 0.00906367540359497, Accuracy Train 0.16, data_points = 4
+[2025-03-13 00:46:20,057][flwr][INFO] -  Client 13, Loss Train 0.00904957365989685, Accuracy Train 0.172, data_points = 4
+[2025-03-13 00:46:20,057][flwr][INFO] -  Client 14, Loss Train 0.009093206644058228, Accuracy Train 0.164, data_points = 4
+[2025-03-13 00:46:20,057][flwr][INFO] -  Client 15, Loss Train 0.009043447017669678, Accuracy Train 0.112, data_points = 4
+[2025-03-13 00:46:20,057][flwr][INFO] -  Client 16, Loss Train 0.009080954074859619, Accuracy Train 0.226, data_points = 4
+[2025-03-13 00:46:20,057][flwr][INFO] -  Client 17, Loss Train 0.009079816579818725, Accuracy Train 0.188, data_points = 4
+[2025-03-13 00:46:20,057][flwr][INFO] -  Client 18, Loss Train 0.009079092025756836, Accuracy Train 0.111, data_points = 4
+[2025-03-13 00:46:20,057][flwr][INFO] -  Client 19, Loss Train 0.009040267705917359, Accuracy Train 0.122, data_points = 4
+[2025-03-13 00:46:20,057][flwr][INFO] -  Client 20, Loss Train 0.009056160688400268, Accuracy Train 0.11, data_points = 4
+[2025-03-13 00:46:20,058][flwr][INFO] -  Client 21, Loss Train 0.009052688360214233, Accuracy Train 0.185, data_points = 4
+[2025-03-13 00:46:20,058][flwr][INFO] -  Client 22, Loss Train 0.009004013299942017, Accuracy Train 0.171, data_points = 4
+[2025-03-13 00:46:20,058][flwr][INFO] -  Client 23, Loss Train 0.009041313886642456, Accuracy Train 0.123, data_points = 4
+[2025-03-13 00:46:20,058][flwr][INFO] -  Client 24, Loss Train 0.00906819462776184, Accuracy Train 0.105, data_points = 4
+[2025-03-13 00:46:20,058][flwr][INFO] -  Client 25, Loss Train 0.00905340838432312, Accuracy Train 0.124, data_points = 4
+[2025-03-13 00:46:20,058][flwr][INFO] -  Client 26, Loss Train 0.009065189838409423, Accuracy Train 0.175, data_points = 4
+[2025-03-13 00:46:20,058][flwr][INFO] -  Client 27, Loss Train 0.009087684392929077, Accuracy Train 0.11, data_points = 4
+[2025-03-13 00:46:20,058][flwr][INFO] -  Client 28, Loss Train 0.009043239831924439, Accuracy Train 0.155, data_points = 4
+[2025-03-13 00:46:20,058][flwr][INFO] -  Client 29, Loss Train 0.009037941932678222, Accuracy Train 0.186, data_points = 4
+[2025-03-13 00:46:20,059][flwr][INFO] -  Client 30, Loss Train 0.009093930721282959, Accuracy Train 0.186, data_points = 4
+[2025-03-13 00:46:20,059][flwr][INFO] -  Client 31, Loss Train 0.00902599549293518, Accuracy Train 0.112, data_points = 4
+[2025-03-13 00:46:20,059][flwr][INFO] -  Client 32, Loss Train 0.0090805401802063, Accuracy Train 0.137, data_points = 4
+[2025-03-13 00:46:20,059][flwr][INFO] -  Client 33, Loss Train 0.009064671754837036, Accuracy Train 0.164, data_points = 4
+[2025-03-13 00:46:20,059][flwr][INFO] -  Client 34, Loss Train 0.009052438735961914, Accuracy Train 0.196, data_points = 4
+[2025-03-13 00:46:20,059][flwr][INFO] -  Client 35, Loss Train 0.009075515270233155, Accuracy Train 0.162, data_points = 4
+[2025-03-13 00:46:20,059][flwr][INFO] -  Client 36, Loss Train 0.009055529356002807, Accuracy Train 0.132, data_points = 4
+[2025-03-13 00:46:20,059][flwr][INFO] -  Client 37, Loss Train 0.009048410654067994, Accuracy Train 0.144, data_points = 4
+[2025-03-13 00:46:20,060][flwr][INFO] -  Client 38, Loss Train 0.009032994270324708, Accuracy Train 0.144, data_points = 4
+[2025-03-13 00:46:20,060][flwr][INFO] -  Client 39, Loss Train 0.009023854732513428, Accuracy Train 0.118, data_points = 4
+[2025-03-13 00:46:20,060][flwr][INFO] -  Client 40, Loss Train 0.008995172739028931, Accuracy Train 0.112, data_points = 4
+[2025-03-13 00:46:20,060][flwr][INFO] -  Client 41, Loss Train 0.009068228721618653, Accuracy Train 0.153, data_points = 4
+[2025-03-13 00:46:20,060][flwr][INFO] -  Client 42, Loss Train 0.009079883813858032, Accuracy Train 0.13, data_points = 4
+[2025-03-13 00:46:20,060][flwr][INFO] -  Client 43, Loss Train 0.009044702529907227, Accuracy Train 0.135, data_points = 4
+[2025-03-13 00:46:20,060][flwr][INFO] -  Client 44, Loss Train 0.009056326866149902, Accuracy Train 0.123, data_points = 4
+[2025-03-13 00:46:20,060][flwr][INFO] -  Client 45, Loss Train 0.009057295083999634, Accuracy Train 0.186, data_points = 4
+[2025-03-13 00:46:20,060][flwr][INFO] -  Client 46, Loss Train 0.009033251285552978, Accuracy Train 0.119, data_points = 4
+[2025-03-13 00:46:20,061][flwr][INFO] -  Client 47, Loss Train 0.009045888185501099, Accuracy Train 0.133, data_points = 4
+[2025-03-13 00:46:20,061][flwr][INFO] -  Client 48, Loss Train 0.009058223724365235, Accuracy Train 0.166, data_points = 4
+[2025-03-13 00:46:20,061][flwr][INFO] -  Client 49, Loss Train 0.009057452440261841, Accuracy Train 0.171, data_points = 4
+[2025-03-13 00:46:20,062][flwr][INFO] - ***FedDebug Output Round 1 ***
+[2025-03-13 00:46:20,062][flwr][INFO] - True Malicious Clients (Ground Truth) = ['0', '1']
+[2025-03-13 00:46:20,062][flwr][INFO] - Total Random Inputs = 10
+[2025-03-13 00:46:20,063][flwr][INFO] - Predicted Malicious Clients = {'0': 0.9, '1': 1.0, '17': 0.1}
+[2025-03-13 00:46:20,063][flwr][INFO] - FedDebug Localization Accuracy = 95.0
+[2025-03-13 00:46:28,108][flwr][INFO] - fit progress: (1, 0.004509105730056763, {'accuracy': 0.1526, 'loss': 0.004509105730056763, 'round': 1}, 63.94255279598292)
+[2025-03-13 00:46:28,109][flwr][INFO] - configure_evaluate: no clients selected, skipping evaluation
+[2025-03-13 00:46:28,109][flwr][INFO] - 
+[2025-03-13 00:46:28,109][flwr][INFO] - [SUMMARY]
+[2025-03-13 00:46:28,110][flwr][INFO] - Run finished 1 round(s) in 63.94s
+[2025-03-13 00:46:28,111][flwr][INFO] - 	History (loss, centralized):
+[2025-03-13 00:46:28,111][flwr][INFO] - 		round 0: 0.004609923124313355
+[2025-03-13 00:46:28,111][flwr][INFO] - 		round 1: 0.004509105730056763
+[2025-03-13 00:46:28,111][flwr][INFO] - 	History (metrics, distributed, fit):
+[2025-03-13 00:46:28,111][flwr][INFO] - 	{'accuracy': [(1, 0.0)],
+[2025-03-13 00:46:28,111][flwr][INFO] - 	 'loss': [(1, 0.0)],
+[2025-03-13 00:46:28,112][flwr][INFO] - 	 'potential_malicious_clients': [(1, {'0': 9, '1': 10, '17': 1})]}
+[2025-03-13 00:46:28,112][flwr][INFO] - 	History (metrics, centralized):
+[2025-03-13 00:46:28,112][flwr][INFO] - 	{'accuracy': [(0, 0.1166), (1, 0.1526)],
+[2025-03-13 00:46:28,112][flwr][INFO] - 	 'loss': [(0, 0.004609923124313355), (1, 0.004509105730056763)],
+[2025-03-13 00:46:28,112][flwr][INFO] - 	 'round': [(0, 0), (1, 1)]}
+[2025-03-13 00:46:28,112][flwr][INFO] - 
+[2025-03-13 00:46:31,117][flwr][INFO] - Saved plot at /users/Parthaw/flower/baselines/feddebug/outputs/2025-03-13/00-45-09/iid-lenet-cifar10.png
+[2025-03-13 00:46:31,118][flwr][INFO] - Training Complete for Experiment: lenet-cifar10-faulty_clients[['0', '1']]-noise_rate1-TClients50--clientsPerR50)-iid-batch256-epochs3-lr0.001
+[2025-03-13 00:46:31,118][flwr][INFO] - Total Time Taken: 81.48540997505188 seconds

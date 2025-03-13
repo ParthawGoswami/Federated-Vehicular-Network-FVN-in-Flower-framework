@@ -1,0 +1,75 @@
+[2025-03-12 02:18:07,113][flwr][INFO] -  ***********  Starting Experiment: SimpleCNN-mnist-faulty_clients[['0']]-noise_rate1-TClients10--clientsPerR10)-non_iid-batch256-epochs3-lr0.001 ***************
+[2025-03-12 02:18:11,982][flwr][INFO] - ** All Malicious Clients are: ['0'] **
+[2025-03-12 02:18:12,071][flwr][WARNING] - DEPRECATED FEATURE: `client_fn` now expects a signature `def client_fn(context: Context)`.The provided `client_fn` has signature: {'cid': <Parameter "cid">}. You can import the `Context` like this: `from flwr.common import Context`
+
+            This is a deprecated feature. It will be removed
+            entirely in future versions of Flower.
+        
+[2025-03-12 02:18:12,072][flwr][WARNING] - DEPRECATED FEATURE: Passing either `server`, `config`, `strategy` or `client_manager` directly to the ServerApp constructor is deprecated.
+
+            Check the following `FEATURE UPDATE` warning message for the preferred
+            new mechanism to use this feature in Flower.
+        
+[2025-03-12 02:18:12,072][flwr][WARNING] - FEATURE UPDATE: Pass `ServerApp` arguments wrapped in a `flwr.server.ServerAppComponents` object that gets returned by a function passed as the `server_fn` argument to the `ServerApp` constructor. For example: 
+        ------------------------------------------------------------
+        
+
+        def server_fn(context: Context):
+            server_config = ServerConfig(num_rounds=3)
+            strategy = FedAvg()
+            return ServerAppComponents(
+                strategy=strategy,
+                server_config=server_config,
+        )
+
+        app = ServerApp(server_fn=server_fn)
+
+        ------------------------------------------------------------
+        
+[2025-03-12 02:18:12,082][flwr][INFO] - Starting Flower ServerApp, config: num_rounds=5, no round_timeout
+[2025-03-12 02:18:12,088][flwr][INFO] - 
+[2025-03-12 02:18:12,090][flwr][INFO] - [INIT]
+[2025-03-12 02:18:12,090][flwr][INFO] - Using initial global parameters provided by strategy
+[2025-03-12 02:18:12,092][flwr][INFO] - Starting evaluation of initial global parameters
+[2025-03-12 02:18:12,725][flwr][ERROR] - ServerApp thread raised an exception: Given groups=1, weight of size [64, 3, 3, 3], expected input[512, 1, 32, 32] to have 3 channels, but got 1 channels instead
+[2025-03-12 02:18:12,730][flwr][ERROR] - Traceback (most recent call last):
+  File "/users/Parthaw/.cache/pypoetry/virtualenvs/parthaw-F9qIDn2K-py3.10/lib/python3.10/site-packages/flwr/simulation/run_simulation.py", line 268, in server_th_with_start_checks
+    updated_context = _run(
+  File "/users/Parthaw/.cache/pypoetry/virtualenvs/parthaw-F9qIDn2K-py3.10/lib/python3.10/site-packages/flwr/server/run_serverapp.py", line 62, in run
+    server_app(driver=driver, context=context)
+  File "/users/Parthaw/.cache/pypoetry/virtualenvs/parthaw-F9qIDn2K-py3.10/lib/python3.10/site-packages/flwr/server/server_app.py", line 129, in __call__
+    start_driver(
+  File "/users/Parthaw/.cache/pypoetry/virtualenvs/parthaw-F9qIDn2K-py3.10/lib/python3.10/site-packages/flwr/server/compat/app.py", line 90, in start_driver
+    hist = run_fl(
+  File "/users/Parthaw/.cache/pypoetry/virtualenvs/parthaw-F9qIDn2K-py3.10/lib/python3.10/site-packages/flwr/server/server.py", line 492, in run_fl
+    hist, elapsed_time = server.fit(
+  File "/users/Parthaw/.cache/pypoetry/virtualenvs/parthaw-F9qIDn2K-py3.10/lib/python3.10/site-packages/flwr/server/server.py", line 95, in fit
+    res = self.strategy.evaluate(0, parameters=self.parameters)
+  File "/users/Parthaw/.cache/pypoetry/virtualenvs/parthaw-F9qIDn2K-py3.10/lib/python3.10/site-packages/flwr/server/strategy/fedavg.py", line 167, in evaluate
+    eval_res = self.evaluate_fn(server_round, parameters_ndarrays, {})
+  File "/users/Parthaw/flower/baselines/feddebug/feddebug/main.py", line 95, in _eval_gm
+    d_res = test(gm_model, server_testdata, device=cfg.device)
+  File "/users/Parthaw/flower/baselines/feddebug/feddebug/models.py", line 247, in test
+    outputs = net(images)
+  File "/users/Parthaw/.cache/pypoetry/virtualenvs/parthaw-F9qIDn2K-py3.10/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/users/Parthaw/.cache/pypoetry/virtualenvs/parthaw-F9qIDn2K-py3.10/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/users/Parthaw/flower/baselines/feddebug/feddebug/models.py", line 115, in forward
+    x = self.conv_block1(x)
+  File "/users/Parthaw/.cache/pypoetry/virtualenvs/parthaw-F9qIDn2K-py3.10/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/users/Parthaw/.cache/pypoetry/virtualenvs/parthaw-F9qIDn2K-py3.10/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/users/Parthaw/.cache/pypoetry/virtualenvs/parthaw-F9qIDn2K-py3.10/lib/python3.10/site-packages/torch/nn/modules/container.py", line 250, in forward
+    input = module(input)
+  File "/users/Parthaw/.cache/pypoetry/virtualenvs/parthaw-F9qIDn2K-py3.10/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/users/Parthaw/.cache/pypoetry/virtualenvs/parthaw-F9qIDn2K-py3.10/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/users/Parthaw/.cache/pypoetry/virtualenvs/parthaw-F9qIDn2K-py3.10/lib/python3.10/site-packages/torch/nn/modules/conv.py", line 554, in forward
+    return self._conv_forward(input, self.weight, self.bias)
+  File "/users/Parthaw/.cache/pypoetry/virtualenvs/parthaw-F9qIDn2K-py3.10/lib/python3.10/site-packages/torch/nn/modules/conv.py", line 549, in _conv_forward
+    return F.conv2d(
+RuntimeError: Given groups=1, weight of size [64, 3, 3, 3], expected input[512, 1, 32, 32] to have 3 channels, but got 1 channels instead
+
